@@ -5,6 +5,12 @@ var logger       = require('morgan');
 var bodyParser   = require('body-parser');
 var debug        = require('debug')('app:http');
 var cookieParser = require('cookie-parser');
+var mongoose     = require('mongoose');
+var users        = require('./config/routes');
+var pages        = require('./config/routes');
+var session      = require('express-session');
+var passport     = require('passport');
+var dotenv       = require('dotenv');
 
 // Load local libraries.
 var env      = require('./config/environment'),
@@ -20,6 +26,10 @@ app.set('safe-title', env.SAFE_TITLE);
 // EJS view engine config
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+
+//config resources
+require('./config/db');
+require('./config/passport');
 
 // Create local variables for use thoughout the application.
 app.locals.title = app.get('title');
@@ -39,11 +49,21 @@ app.use(cookieParser('notsosecretnowareyou'));
 // app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(express.static(path.join(__dirname, 'public')));
 
+
+app.use(session({
+  secret: 'delectico',
+  resave: false,
+  saveUninitialized: true
+}));
 // Useful for debugging the state of requests.
 app.use(debugReq);
 
+app.use(passport.initialize());
+app.use(passport.session());
+
 // Defines all of our "dynamic" routes.
 app.use('/', routes);
+app.use('/users', users);
 
 // Catches all 404 routes.
 app.use(function(req, res, next) {

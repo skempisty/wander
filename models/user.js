@@ -2,9 +2,14 @@ var mongoose = require('mongoose'),
     debug    = require('debug')('app:models');
 
 var userSchema = new mongoose.Schema({
-  name:   String,
-  handle: String
+  name:                               String,
+  email:                              String,
+  providerId:                         String,
+  handle:                             String,
+  created: { type: Date, default: Date.now }
 });
+
+
 
 var User = mongoose.model('User', userSchema);
 
