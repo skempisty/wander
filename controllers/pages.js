@@ -1,7 +1,7 @@
-var welcome = function(req, res, next) {
-  res.render('pages/welcome');
+var feed = function(req, res, next) {
+  res.render('pages/feed');
 };
 
 module.exports = {
-  welcome: welcome
+  welcome: feed
 };

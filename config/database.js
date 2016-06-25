@@ -1,5 +1,14 @@
 var mongoose = require('mongoose');
 
+//for OAuth
+mongoose.connect(process.env.DATABASE_URL);
+
+mongoose.connection.once('open', function(cb){
+  console.log(`Mongoose connected to: ${process.env.DATABASE_URL}`);
+});
+
+//Wexgen scaffolded portion
+
 var env = require('./environment');
 
 // Use different database URIs based on whether an env var exists.
