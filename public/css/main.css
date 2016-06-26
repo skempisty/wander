@@ -11,3 +11,28 @@ body {
 }
 
 a { color: #00B7FF; }
+
+#contact_list{
+  float: right;
+  position: relative;
+  left: -50%;
+  text-align: left;
+}
+#contact_list header{
+  position: relative;
+  left: 70%;
+  font-size: 150%;
+}
+#contact_list em{
+  text-decoration: underline;
+}
+#contact_list ul{
+  list-style: none;
+  position: relative;
+  left: 50%;
+}
+
+#contact_list li{
+  float: left;
+  margin: 20px;
+}
