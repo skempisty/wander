@@ -4,6 +4,7 @@
 
 Enjoy… 
 
+
 # DEVELOPMENT NOTES
 
 ### link to go recreate logo from base
@@ -11,3 +12,7 @@ Enjoy…
 
 ### slideshow music
 - Rhapsody in Blue 
+
+
+wen was here
+
