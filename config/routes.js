@@ -1,5 +1,6 @@
 var express = require('express'),
     router  = new express.Router();
+    passport = require('passport');
 
 // Require controllers.
 var pagesController = require('../controllers/pages');
@@ -11,5 +12,22 @@ router.get('/', pagesController.welcome);
 // users resource paths:
 router.get('/users',     usersController.index);
 router.get('/users/:id', usersController.show);
+
+// Google OAuth
+router.get('/auth/google',
+  passport.authenticate('google', { scope: ['profile'] }));
+
+router.get('/auth/callback',
+  passport.authenticate('google', { failureRedirect: '/login' }),
+  function(req, res) {
+    res.redirect('/');
+  });
+
+router.get('/logout', function(req, res) {
+  req.logout();
+  res.redirect('/');
+});
+
+
 
 module.exports = router;
