@@ -1,7 +1,12 @@
 var welcome = function(req, res, next) {
-  res.render('pages/welcome', { user: req.user });
+  res.render('pages/welcome');
 };
 
+var contact = function(req, res, next){
+  res.render('pages/contact');
+}
+
 module.exports = {
-  welcome: welcome
+  welcome: welcome,
+  contact: contact
 };
