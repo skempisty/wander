@@ -28,6 +28,9 @@ router.get('/logout', function(req, res) {
   res.redirect('/');
 });
 
+router.get('/contact', pagesController.contact);
+
+
 
 
 module.exports = router;
