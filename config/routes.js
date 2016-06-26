@@ -12,4 +12,6 @@ router.get('/', pagesController.welcome);
 router.get('/users',     usersController.index);
 router.get('/users/:id', usersController.show);
 
+router.get('/contact', pagesController.contact);
+
 module.exports = router;
