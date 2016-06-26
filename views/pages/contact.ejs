@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Contact Us</title>
-  <link rel="stylesheet" type="text/css" href="../css/main.css"/>
+   <%- include('../partials/head') %>
 </head>
 <body>
+<%- include('../partials/navbar') %>
+ <%- include('../partials/header', {subHeading: 'ROOT'}) %>
+
+
   <div id="contact_list">
     <header><em>Meet The Team</em></header>
       <ul>
@@ -23,5 +25,7 @@
         <li>Email: ...</li>
       </ul>
   </div>
+  <%- include('../partials/footer') %>
+  <%- include('../partials/scripts') %>
 </body>
 </html>

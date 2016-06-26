@@ -7,12 +7,11 @@ var pagesController = require('../controllers/pages');
 var usersController = require('../controllers/users');
 
 // root path:
-router.get('/', pagesController.welcome);
+router.get('/', pagesController.feed);
 
 // users resource paths:
 router.get('/users',     usersController.index);
 router.get('/users/:id', usersController.show);
-
 // Google OAuth
 router.get('/auth/google',
   passport.authenticate('google', { scope: ['profile'] }));
@@ -28,8 +27,11 @@ router.get('/logout', function(req, res) {
   res.redirect('/');
 });
 
+//contact page
 router.get('/contact', pagesController.contact);
 
+//about page
+router.get('/about', pagesController.about);
 
 
 
