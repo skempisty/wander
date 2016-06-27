@@ -1,3 +1,5 @@
+
+
 *,
 html,
 body {
@@ -12,20 +14,45 @@ body {
 
 a { color: #00B7FF; }
 
+#about em{
+  color: #624e42;
+  font-family: 'Roboto', sans-serif;
+}
+#about p{
+color: #24afe5;
+font-family: 'Roboto', sans-serif;
+}
+
+
+#wander_logo{
+  display: inline-block;
+  position: relative;
+  width: 40%;
+  height: 200%;
+  top: -10px;
+}
+
+
 #contact_list{
   float: right;
   position: relative;
   left: -50%;
   text-align: left;
+  width: 30%;
 }
+
 #contact_list header{
   position: relative;
   left: 70%;
   font-size: 150%;
 }
+
 #contact_list em{
   text-decoration: underline;
+  color: #624e42;
+  font-family: 'Roboto', sans-serif;
 }
+
 #contact_list ul{
   list-style: none;
   position: relative;
@@ -35,4 +62,6 @@ a { color: #00B7FF; }
 #contact_list li{
   float: left;
   margin: 20px;
+  color: #24afe5;
+  font-family: 'Roboto', sans-serif;
 }
