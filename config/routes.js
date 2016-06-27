@@ -27,10 +27,10 @@ router.get('/logout', function(req, res) {
   res.redirect('/');
 });
 
-//contact page
+// contact page
 router.get('/contact', pagesController.contact);
 
-//about page
+// about page
 router.get('/about', pagesController.about);
 
 
