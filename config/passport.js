@@ -10,7 +10,7 @@ passport.use(new GoogleStrategy({
   // FIND USER IF EXISTS, IF DOESNT EXIST CREATE USER
   function(accessToken, refreshToken, profile, cb) {
     console.log(profile);
-    User.findOne({ instagramId: profile.id }, function(err, user) {
+    User.findOne({ providerId: profile.id }, function(err, user) {
       if (err) {return cb(err)};
       if (user) {return cb(null, user)};
 
