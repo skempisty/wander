@@ -1,7 +1,17 @@
-var welcome = function(req, res, next) {
-  res.render('pages/welcome', { user: req.user });
+var feed = function(req, res, next) {
+  res.render('pages/feed', {user: req.user});
+};
+
+var contact = function(req, res, next){
+  res.render('pages/contact', {user: req.user});
+};
+
+var about = function(req, res, next){
+  res.render('pages/about', {user: req.user});
 };
 
 module.exports = {
-  welcome: welcome
+  feed: feed,
+  contact: contact,
+  about: about
 };
