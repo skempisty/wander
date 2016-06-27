@@ -6,12 +6,15 @@ var express = require('express'),
 var pagesController = require('../controllers/pages');
 var usersController = require('../controllers/users');
 
+
+
 // root path:
 router.get('/', pagesController.feed);
 
 // users resource paths:
-router.get('/users',     usersController.index);
-router.get('/users/:id', usersController.show);
+router.get('/users/:id/edit', usersController.edit);
+router.get('/trips', usersController.trips);
+
 // Google OAuth
 router.get('/auth/google',
   passport.authenticate('google', { scope: ['profile'] }));
