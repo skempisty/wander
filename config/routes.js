@@ -1,7 +1,6 @@
 var express = require('express'),
     router  = new express.Router();
-    passport = require('passport'),
-    logout = require('express-passport-logout');
+    passport = require('passport');
 
 // Require controllers.
 var pagesController = require('../controllers/pages');
@@ -28,9 +27,7 @@ router.get('/auth/callback',
 
 router.get('/logout', function(req, res) {
   req.logout();
-  req.session.destroy();
   res.redirect('/');
-  return res.status(200).send();
 });
 
 // contact page
