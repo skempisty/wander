@@ -43,7 +43,7 @@ a { color: #00B7FF; }
 }
 
 .push-spaces {
-    height: 400px;
+    height: 350px;
 }
 
 h3 {
@@ -52,7 +52,7 @@ h3 {
 }
 
 .content{
-  font-size: 30px;
+  font-size: 20px;
   text-align: center;
   color: #624e42;
   font-family: 'Roboto', sans-serif;
