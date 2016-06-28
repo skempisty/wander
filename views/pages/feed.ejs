@@ -2,6 +2,7 @@
 <html>
 <head>
   <link href='https://fonts.googleapis.com/css?family=Roboto:900&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/js/main.js">
   <link rel="stylesheet" href="/css/main.css">
   <%- include('../partials/head') %>
 </head>
@@ -9,28 +10,30 @@
 <body>
  <%- include('../partials/navbar') %>
  <%- include('../partials/header', {subHeading: ''}) %>
-   <div class="jumbotron">
-     <div class="content">
-        A photo can speak a thousand words; it can spark memories of an adventure,
-        a moment in time that you want to remember. <br>
-        But can you remember what street you were on when you took that photo? <br>
-        Can you remember the route you took? <br><br>
-        When you wander, we're there to help you remember. <br><br>
-     </div>
-     <div class="feature">
-     <img src="../images/wander_welcome.png" class="img-responsive" alt="Image">
-     </div>
-     <div class= content>
-      <br><br>
-       Wander was designed by people who have a love for culture and travel.
-       It is an app that will allow you to capture your memories and save them
-       to an album that not only shows your photos, but will show the route you
-       took by embedding the images into a map view. This will allow you to see
-       the route you took and each place you took a photo. <br><br>
-       Log in with your flicker account and build your first album.
-       <br><br>
-     </div>
-   </div>
+  <div class="jumbotron">
+    <div class="container push-spaces">
+
+        <h3>
+          <li>A photo can speak a thousand words</li><br>
+          <li>It floods you with memories</li><br>
+          <li>A moment in time you don't want to forget</li><br>
+          <li>When you wander, we're there to help you remember</li><br><br>
+        </h3>
+
+    </div>
+  </div>
+  <div class= content>
+  <br><br>
+    Wander was designed by people who have a love for culture and travel.<br>
+    It is an app that will allow you to capture your memories and save them<br>
+    to an album that not only shows your photos, but will show the route<br>
+    you took by embedding the images into a map view.<br><br>
+    This will allow you to see the route you took and each place you took a photo.<br><br>
+    To start, log in with your flicker account and create your first memory.<br><br>
+  </div>
+  <div class="feature">
+  <img src="../images/wander_welcome.png" class="img-responsive" alt="Image">
+  </div>
  <%- include('../partials/footer') %>
  <%- include('../partials/scripts') %>
 </body>
