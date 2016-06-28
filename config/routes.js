@@ -6,18 +6,25 @@ var express = require('express'),
 var pagesController = require('../controllers/pages');
 var usersController = require('../controllers/users');
 
+
+
 // root path:
 router.get('/', pagesController.feed);
 
 // users resource paths:
-router.get('/users',     usersController.index);
-router.get('/users/:id', usersController.show);
-// Google OAuth
-router.get('/auth/google',
-  passport.authenticate('google', { scope: ['profile'] }));
+router.get('/users/:id/edit', usersController.edit);
+router.get('/trips', usersController.trips);
+
+// Flickr OAuth
+router.get('/auth/flickr',
+  passport.authenticate('flickr'),
+   function(req, res){
+    // The request will be redirected to Flickr for authentication, so this
+    // function will not be called.
+});
 
 router.get('/auth/callback',
-  passport.authenticate('google', { failureRedirect: '/login' }),
+  passport.authenticate('flickr', { failureRedirect: '/login' }),
   function(req, res) {
     res.redirect('/');
   });
