@@ -15,12 +15,16 @@ router.get('/', pagesController.feed);
 router.get('/users/:id/edit', usersController.edit);
 router.get('/trips', usersController.trips);
 
-// Google OAuth
-router.get('/auth/google',
-  passport.authenticate('google', { scope: ['profile'] }));
+// Flickr OAuth
+router.get('/auth/flickr',
+  passport.authenticate('flickr'),
+   function(req, res){
+    // The request will be redirected to Flickr for authentication, so this
+    // function will not be called.
+});
 
 router.get('/auth/callback',
-  passport.authenticate('google', { failureRedirect: '/login' }),
+  passport.authenticate('flickr', { failureRedirect: '/login' }),
   function(req, res) {
     res.redirect('/');
   });

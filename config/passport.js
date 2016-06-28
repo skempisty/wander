@@ -1,16 +1,16 @@
 var passport       = require('passport');
 var User           = require('../models/user');
-var GoogleStrategy = require('passport-google-oauth20').Strategy;
+var FlickrStrategy = require('passport-flickr').Strategy;
 
-passport.use(new GoogleStrategy({
-    clientID: process.env.CLIENT_ID,
-    clientSecret: process.env.CLIENT_SECRET,
+passport.use(new FlickrStrategy({
+    consumerKey: process.env.FLICKR_CONSUMER_KEY,
+    consumerSecret: process.env.FLICKR_CONSUMER_SECRET,
     callbackURL: process.env.CALLBACK_URL
   },
   // FIND USER IF EXISTS, IF DOESNT EXIST CREATE USER
   function(accessToken, refreshToken, profile, cb) {
     console.log(profile);
-    User.findOne({ providerId: profile.id }, function(err, user) {
+    User.findOne({ flickrId: profile.id }, function(err, user) {
       if (err) {return cb(err)};
       if (user) {return cb(null, user)};
 
