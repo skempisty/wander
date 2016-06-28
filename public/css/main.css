@@ -1,6 +1,6 @@
 
 
-*,
+
 html,
 body {
   box-sizing: border-box;
@@ -8,23 +8,20 @@ body {
 }
 
 body {
-  font-size: 14px;
+  font-size: 20px;
   padding: 50px;
+  color: #624e42;
 }
 
 a { color: #00B7FF; }
 
-
-#feature{
-  border: groove 2px lightgreen;
-  border-radius: 10px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 500px;
-  height: 400px;
-  margin-top: -150px; /* Half the height */
-  margin-left: -250px; /* Half the width */
+.content{
+  font-size: 20px;
+  text-align: center;
+  color: #624e42;
+  font-family: 'Roboto', sans-serif;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 #about em{
@@ -32,19 +29,24 @@ a { color: #00B7FF; }
   font-family: 'Roboto', sans-serif;
 }
 #about p{
-color: #24afe5;
+color: #624e42;
 font-family: 'Roboto', sans-serif;
 }
 
 
+/*this is the nav bar logo*/
 #wander_logo{
   display: inline-block;
   position: relative;
-  width: 40%;
-  height: 200%;
+  width: 25%;
+  height: 285%;
   top: -10px;
+  padding-left: 30px;
 }
 
+.navbar-header{
+  padding-bottom: 15px;
+}
 
 #contact_list{
   float: right;
@@ -77,270 +79,5 @@ font-family: 'Roboto', sans-serif;
   margin: 20px;
   color: #24afe5;
   font-family: 'Roboto', sans-serif;
-}
-
-/*Mobile*/
-
-/*Iphone 4 and 4s*/
-@media only screen
-  and (min-device-width: 320px)
-  and (max-device-width: 480px)
-  and (-webkit-min-device-pixel-ratio: 2) {
-    #feature{
-        border: groove 2px lightgreen;
-        border-radius: 10px;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 250px;
-        height: 200px;
-        margin-top: -150px; /* Half the height */
-        margin-left: -250px; /* Half the width */
-  }
-}
-
-/*Iphone 5 and 5s*/
-@media only screen
-  and (min-device-width: 320px)
-  and (max-device-width: 568px)
-  and (-webkit-min-device-pixel-ratio: 2) {
-    #feature{
-        border: groove 2px lightgreen;
-        border-radius: 10px;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 250px;
-        height: 200px;
-        margin-top: -150px; /* Half the height */
-        margin-left: -250px; /* Half the width */
-  }
-}
-
-/*Iphone 6*/
-@media only screen
-  and (min-device-width: 375px)
-  and (max-device-width: 667px)
-  and (-webkit-min-device-pixel-ratio: 2) {
-    #feature{
-        border: groove 2px lightgreen;
-        border-radius: 10px;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 250px;
-        height: 200px;
-        margin-top: -150px; /* Half the height */
-        margin-left: -250px; /* Half the width */
-  }
-}
-
-
-/*Iphone 6+*/
-@media only screen
-  and (min-device-width: 414px)
-  and (max-device-width: 736px)
-  and (-webkit-min-device-pixel-ratio: 3) {
-     #feature{
-        border: groove 2px lightgreen;
-        border-radius: 10px;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 250px;
-        height: 200px;
-        margin-top: -150px; /* Half the height */
-        margin-left: -250px; /* Half the width */
-  }
-}
-
-/*Galaxy S3*/
-@media screen
-  and (device-width: 320px)
-  and (device-height: 640px)
-  and (-webkit-device-pixel-ratio: 2) {
-    #feature{
-        border: groove 2px lightgreen;
-        border-radius: 10px;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 250px;
-        height: 200px;
-        margin-top: -150px; /* Half the height */
-        margin-left: -250px; /* Half the width */
-  }
-}
-
-
-/*Galaxy S4*/
-@media screen
-  and (device-width: 320px)
-  and (device-height: 640px)
-  and (-webkit-device-pixel-ratio: 3) {
-    #feature{
-        border: groove 2px lightgreen;
-        border-radius: 10px;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 250px;
-        height: 200px;
-        margin-top: -150px; /* Half the height */
-        margin-left: -250px; /* Half the width */
-  }
-}
-
-/*Galaxy S5*/
-@media screen
-  and (device-width: 360px)
-  and (device-height: 640px)
-  and (-webkit-device-pixel-ratio: 3) {
-      #feature{
-        border: groove 2px lightgreen;
-        border-radius: 10px;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 250px;
-        height: 200px;
-        margin-top: -150px; /* Half the height */
-        margin-left: -250px; /* Half the width */
-  }
-}
-
-/*HTC One*/
-@media screen
-  and (device-width: 360px)
-  and (device-height: 640px)
-  and (-webkit-device-pixel-ratio: 3) {
-    #feature{
-        border: groove 2px lightgreen;
-        border-radius: 10px;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 250px;
-        height: 200px;
-        margin-top: -150px; /* Half the height */
-        margin-left: -250px; /* Half the width */
-  }
-}
-
-/*Tablets*/
-
-/*Ipad Mini*/
-@media only screen
-  and (min-device-width: 768px)
-  and (max-device-width: 1024px)
-  and (-webkit-min-device-pixel-ratio: 1) {
-    #feature{
-        border: groove 2px lightgreen;
-        border-radius: 10px;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 250px;
-        height: 200px;
-        margin-top: -150px; /* Half the height */
-        margin-left: -250px; /* Half the width */
-  }
-}
-
-
-/*Ipad 1 and 2*/
-@media only screen
-  and (min-device-width: 768px)
-  and (max-device-width: 1024px)
-  and (-webkit-min-device-pixel-ratio: 1) {
-    #feature{
-        border: groove 2px lightgreen;
-        border-radius: 10px;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 250px;
-        height: 200px;
-        margin-top: -150px; /* Half the height */
-        margin-left: -250px; /* Half the width */
-  }
-}
-
-
-/*Ipad 3 and 4*/
-@media only screen
-  and (min-device-width: 768px)
-  and (max-device-width: 1024px)
-  and (-webkit-min-device-pixel-ratio: 2) {
-    #feature{
-        border: groove 2px lightgreen;
-        border-radius: 10px;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 250px;
-        height: 200px;
-        margin-top: -150px; /* Half the height */
-        margin-left: -250px; /* Half the width */
-  }
-}
-
-
-/*Laptops*/
-
-/*Non-Retina Screens*/
-@media screen
-  and (min-device-width: 1200px)
-  and (max-device-width: 1600px)
-  and (-webkit-min-device-pixel-ratio: 1) {
-     #feature{
-  border: groove 2px lightgreen;
-  border-radius: 10px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 500px;
-  height: 400px;
-  margin-top: -150px; /* Half the height */
-  margin-left: -250px; /* Half the width */
-}
-}
-
-/*Retina Screens*/
-@media screen
-  and (min-device-width: 1200px)
-  and (max-device-width: 1600px)
-  and (-webkit-min-device-pixel-ratio: 2)
-  and (min-resolution: 192dpi) {
-     #feature{
-  border: groove 2px lightgreen;
-  border-radius: 10px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 500px;
-  height: 400px;
-  margin-top: -150px; /* Half the height */
-  margin-left: -250px; /* Half the width */
-}
-}
-
-/*Wearables*/
-
-/*Apple Watch*/
-@media
-  (max-device-width: 42mm)
-  and (min-device-width: 38mm) {
-   #feature{
-      border: groove 2px lightgreen;
-      border-radius: 10px;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 250px;
-      height: 200px;
-      margin-top: -150px; /* Half the height */
-      margin-left: -250px; /* Half the width */
-  }
 }
 

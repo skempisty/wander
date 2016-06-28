@@ -1,48 +1,38 @@
-
 <!DOCTYPE html>
 <html>
 <head>
-<link href='https://fonts.googleapis.com/css?family=Roboto:900&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
- <%- include('../partials/head') %>
+  <link href='https://fonts.googleapis.com/css?family=Roboto:900&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/css/main.css">
+  <%- include('../partials/head') %>
 </head>
+  <main>
 <body>
  <%- include('../partials/navbar') %>
- <%- include('../partials/header', {subHeading: 'ROOT'}) %>
-
- <main>
- <div>
-  <p>
-    A photo can speak a thousand words, it sparks memories of an adventure,
-    a moment in time that you want to remember. <br>
-    But can you remember what street you were on when you took that photo? <br>
-    Can you remember the route you took? <br>
-    When you wander, we are there to help you remember.
-  </p>
- </div>
- <div>
-  <img id = "feature" src="./images/wander_welcome.png" />
- </div>
- <div>
-   <p>
-    Wander was designed by people who have a love for culture and travel. <br>
-    To often you embark on an adventure and meet incredible people, see amazing sights,
-    eat great food and pause where ever you can to capture that memory with a photo. <br>
-    When you revisit that trip by scrolling through your photos, or making a photo album,
-    often you come across a shot of that old man you had a conversation with, remember
-    it was in Tokyo but where exactly was that? <br>
-    It’s hard to remember because half the time you didn’t know where you were to begin with. <br>
-    Wander will take the photographs of your journey and and map out where they were taken.
-    Wander will then place them by location over a google maps image of the area and create
-    a route based on your photos, so you will know exactly where the photos were taken and
-    the route you took. <br>
-    No longer will  you forget where you were when you took that amazing shot. <br>
-    Welcome to the new way of capturing your memories and sharing them with the world.
-   </p>
- </div>
- </main>
+ <%- include('../partials/header', {subHeading: ''}) %>
+   <div class="jumbotron">
+     <div class="content">
+        A photo can speak a thousand words; it can spark memories of an adventure,
+        a moment in time that you want to remember. <br>
+        But can you remember what street you were on when you took that photo? <br>
+        Can you remember the route you took? <br><br>
+        When you wander, we're there to help you remember. <br><br>
+     </div>
+     <div class="feature">
+     <img src="../images/wander_welcome.png" class="img-responsive" alt="Image">
+     </div>
+     <div class= content>
+      <br><br>
+       Wander was designed by people who have a love for culture and travel.
+       It is an app that will allow you to capture your memories and save them
+       to an album that not only shows your photos, but will show the route you
+       took by embedding the images into a map view. This will allow you to see
+       the route you took and each place you took a photo. <br><br>
+       Log in with your flicker account and build your first album.
+       <br><br>
+     </div>
+   </div>
  <%- include('../partials/footer') %>
-
-
  <%- include('../partials/scripts') %>
 </body>
+  </main>
 </html>
