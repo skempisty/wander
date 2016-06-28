@@ -27,6 +27,31 @@ a { color: #00B7FF; }
   margin-left: -250px; /* Half the width */
 }
 
+#edit_btn{
+  margin-top: 30px;
+  color: #24afe5;
+  background-color: #624e42;
+  border-radius: 4px;
+}
+
+#skip{
+  display: block;
+  position: relative;
+  left: 195px;
+  top: -30px;
+  color: #24afe5;
+  background-color: #624e42;
+  border-radius: 4px;
+}
+
+.input{
+  color: #24afe5;
+}
+
+label{
+  text-decoration: underline;
+}
+
 #about em{
   color: #624e42;
   font-family: 'Roboto', sans-serif;

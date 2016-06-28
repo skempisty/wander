@@ -14,6 +14,9 @@ router.get('/', pagesController.feed);
 // users resource paths:
 router.get('/users/:id/edit', usersController.edit);
 router.get('/trips', usersController.trips);
+router.post('/additional-info', usersController.create);
+router.put('/update-info', usersController.update);
+
 
 // Google OAuth
 router.get('/auth/google',

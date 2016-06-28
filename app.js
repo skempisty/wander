@@ -7,7 +7,7 @@ var debug        = require('debug')('app:http');
 var cookieParser = require('cookie-parser');
 var session      = require('express-session');
 var passport     = require('passport');
-
+var flickr       = require('flickrapi');
 
 // Load local libraries.
 var env      = require('./config/environment'),
@@ -27,6 +27,7 @@ app.set('view engine', 'ejs');
 require('dotenv').load();
 require('./config/database');
 require('./config/passport');
+require('./config/flickr');
 
 // Create local variables for use thoughout the application.
 app.locals.title = app.get('title');
