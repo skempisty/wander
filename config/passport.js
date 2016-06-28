@@ -15,8 +15,9 @@ passport.use(new FlickrStrategy({
       if (user) {return cb(null, user)};
 
       var newUser = new User({
-        name: profile.displayName,
-        providerId: profile.id
+        handle: profile.displayName,
+        flickrId: profile.id,
+         fullName: profile.fullName
       });
       newUser.save(function(err) {
         if (err) {return cb(err)};

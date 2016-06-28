@@ -5,6 +5,7 @@ var express = require('express'),
 // Require controllers.
 var pagesController = require('../controllers/pages');
 var usersController = require('../controllers/users');
+var tripsController = require('../controllers/trips');
 
 
 
@@ -13,7 +14,9 @@ router.get('/', pagesController.feed);
 
 // users resource paths:
 router.get('/users/:id/edit', usersController.edit);
-router.get('/trips', usersController.trips);
+
+// trips paths
+router.get('/trips', tripsController.index);
 
 // Flickr OAuth
 router.get('/auth/flickr',
