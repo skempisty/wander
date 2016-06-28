@@ -16,7 +16,7 @@ router.get('/', pagesController.feed);
 router.get('/users/:id/edit', usersController.edit);
 
 // trips paths
-router.get('/trips', tripsController.index);
+router.get('/trips/new', tripsController.new);
 
 // Flickr OAuth
 router.get('/auth/flickr',
