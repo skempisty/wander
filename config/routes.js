@@ -11,19 +11,19 @@ var express = require('express'),
 // Require controllers.
 var pagesController = require('../controllers/pages');
 var usersController = require('../controllers/users');
-var tripsController = require('../controllers/trips');
+// var tripsController = require('../controllers/trips');
 
 
 // root path:
 router.get('/', pagesController.feed);
 
 // users resource paths:
-router.put('/users', usersController.update);
-router.get('/users/:id/edit', usersController.bio);
+router.put('/users', authenticate, usersController.update);
+router.get('/users/edit', authenticate, usersController.bio);
 
 // trips paths
-router.get('/trips/new', tripsController.new);
-router.get('/trips', usersController.trips);
+// router.get('/trips/new', tripsController.new);
+// router.get('/trips', usersController.trips);
 
 // Flickr OAuth
 router.get('/auth/flickr',
@@ -36,7 +36,13 @@ router.get('/auth/callback',
     res.redirect('/');
 });
 
-
+function authenticate(req, res, next) {
+  if(req.user) {
+    next();
+  } else {
+    res.redirect('/auth/flickr');
+  }
+}
 // router.get('/logout', logout());
 
 router.get('/logout', function(req, res) {

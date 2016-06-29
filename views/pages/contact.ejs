@@ -1,16 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <link href='https://fonts.googleapis.com/css?family=Roboto:900&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-   <link rel="stylesheet" href="/css/main.css">
-   <%- include('../partials/head') %>
+  <link href='https://fonts.googleapis.com/css?family=Roboto:900&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/css/main.css">
+  <%- include('../partials/head') %>
 </head>
 <body>
-<%- include('../partials/navbar') %>
-
-<%- include('../partials/header', {subHeading: ''}) %>
-
-
+  <%- include('../partials/navbar') %>
+  <%- include('../partials/header', {subHeading: ''}) %>
   <header><em>Meet The Team</em></header> <br>
     <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
       <div class="contact_list">
@@ -61,7 +58,7 @@
   </div>
   <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
     <br><br><br><br>
-    <img src="../images/newyork.png" alt="">
+    <img src="../images/newyork.png" class="img-responsive" alt="Image">
   </div>
   <%- include('../partials/footer') %>
   <%- include('../partials/scripts') %>
