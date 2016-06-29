@@ -11,7 +11,7 @@ var express = require('express'),
 // Require controllers.
 var pagesController = require('../controllers/pages');
 var usersController = require('../controllers/users');
-// var tripsController = require('../controllers/trips');
+var tripsController = require('../controllers/trips');
 
 
 // root path:
@@ -22,8 +22,10 @@ router.put('/users', authenticate, usersController.update);
 router.get('/users/edit', authenticate, usersController.bio);
 
 // trips paths
-// router.get('/trips/new', tripsController.new);
-// router.get('/trips', usersController.trips);
+router.get('/trips/albumSelect', tripsController.albumSelect);
+router.get('/trips/new', tripsController.new);
+router.get('/trips/:id', tripsController.show);
+router.post('/trips', tripsController.create);
 
 // Flickr OAuth
 router.get('/auth/flickr',
