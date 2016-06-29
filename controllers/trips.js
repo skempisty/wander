@@ -34,28 +34,30 @@ var create = function(req, res, next) {
 
   // REQUEST to get photo Ids and GEOTAGS from selected album
   request(baseSetUrl + '.photosets.getPhotos' + commonArgsUrl + `&photoset_id=${albumId}&extras=geo`, function(error, response, body) {
+    var newTrip = new Trip({
+      title: title,
+      description: descrip,
+      albumId: albumId,
+      createdOn: Date.now(),
+      creator: req.user.id,
+      // mainPhoto: // photo,
+    });
+
     var parsed = JSON.parse(body);
-    console.log(parsed);
-    console.log(parsed.photoset.photo[0]);
 
-    for(var i=0; i<parsed.photoset.photo.length; i++) {
-      photoIds.push(parsed.photoset.photo[i].id);
-      geoTags.push([parsed.photoset.photo[i].latitude, parsed.photoset.photo[i].longitude]);
-    }
-    console.log(geoTags);
-
-    // res.render('trips/albumSelect', {user: req.user, albums: albums});
-  });
-  Trip.create({
-    title: title,
-    description: descrip,
-    albumId: albumId,
-    createdOn: Date.now(),
-    creator: req.user.id,
-    // mainPhoto: // photo,
-    locData: geoTags
-  }, function(err, trip) {
-    res.redirect('/')
+      parsed.photoset.photo.forEach(function(photo) {
+        photoIds.push(photo.id);
+        newTrip.locData.push({
+          latitude: parseFloat(photo.latitude),
+          longitude: parseFloat(photo.longitude)
+        });
+      });
+    newTrip.save(function(err, trip) {
+      if(err) {
+        console.log(err);
+      }
+      res.redirect('/');
+    });
   });
 };
 
@@ -69,14 +71,3 @@ module.exports = {
   create: create,
   show: show
 };
-    // }
-    // console.log('albums' + albums);
-    // setIds.forEach(function(setId) {
-    //   promises.push(new Promise(function(resolve, reject) {
-    //     var url = baseSetUrl + '.photosets.getPhotos' + commonArgsUrl + `&photoset_id=${setId}`;
-    //     request(url, function(error, response, body) {
-    //       resolve(JSON.parse(body));
-    //     });
-    //   }));
-    // });
-    // Promise.all(promises).then(function(results) {
