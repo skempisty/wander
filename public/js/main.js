@@ -1,4 +1,3 @@
-console.log('JS loaded!');
 
 $(document).ready(function(){
   $('#edit_btn').on('click', function(){

@@ -11,29 +11,30 @@ var express = require('express'),
 // Require controllers.
 var pagesController = require('../controllers/pages');
 var usersController = require('../controllers/users');
+var tripsController = require('../controllers/trips');
 
 
 // root path:
 router.get('/', pagesController.feed);
 
 // users resource paths:
-router.get('/users/:id/edit', usersController.bio);
-router.get('/trips', usersController.trips);
 router.put('/users', usersController.update);
+router.get('/users/:id/edit', usersController.bio);
 
+// trips paths
+router.get('/trips/new', tripsController.new);
+router.get('/trips', usersController.trips);
 
 // Flickr OAuth
 router.get('/auth/flickr',
-  passport.authenticate('flickr'),
-  function(req, res){
-
-  });
+  passport.authenticate('flickr'), function(req, res) {
+});
 
 router.get('/auth/callback',
   passport.authenticate('flickr', { failureRedirect: '/login' }),
   function(req, res) {
     res.redirect('/');
-  });
+});
 
 
 // router.get('/logout', logout());

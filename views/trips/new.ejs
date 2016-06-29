@@ -6,9 +6,18 @@
 </head>
 <body>
  <%- include('../partials/navbar') %>
- <%- include('../partials/header', {subHeading: 'TRIPS'}) %>
+ <%- include('../partials/header', {subHeading: 'New Trip'}) %>
+ <main>
+
+<ul>
+  <% albums.forEach(function(album) { %>
+    <li><%= album.title._content  %></li>
+  <% }) %>
+</ul>
 
 
+
+ </main>
  <%- include('../partials/footer') %>
  <%- include('../partials/scripts') %>
 </body>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href='https://fonts.googleapis.com/css?family=Roboto:900&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+<%- include('../partials/head') %>
+</head>
+<body>
+<%- include('../partials/navbar') %>
+
+<% if(user) { %>
+ <%- include('../partials/header', {subHeading: 'EDIT PROFILE'}) %>
+ <form action="/upload" method="POST" enctype="multipart/form-data">
+   <label>Handle:</label>
+   <input class="input" type="text" name="user[handle]" placeholder="Enter New Handle" required/>
+   <br>
+   <br>
+   <label>Add Profile Photo</label>
+   <br>
+   <br>
+   <input type="file" name="displayImage" required>
+   <br>
+   <br>
+   <label>Bio</label>
+   <input type="textarea" placeholder="Tell us about yourself" required/>
+   <input id="edit_btn" type="submit" value="submit">
+ </form>
+ <a href="/"><button id="skip">Skip</button></a>
+ <% } else { %>
+   <%- include('../partials/header', {subHeading: 'ADD PROFILE INFO'}) %>
+   <form action="'/upload" method = "POST" enctype="multipart/form-data">
+     <label>Handle:</label>
+     <input class="input" type="text" name="user[handle]" placeholder="Enter New Handle" required/>
+     <br>
+     <br>
+     <label>Add Profile Photo</label>
+     <br>
+     <br>
+     <input type="file" name="displayImage" required>
+     <input id="edit_btn" type="submit" value="submit">
+   </form>
+   <a href="/"><button id="skip">Skip</button></a>
+ <% } %>
+<%- include('../partials/footer') %>
+<%- include('../partials/scripts') %>
+</body>
+</html>
