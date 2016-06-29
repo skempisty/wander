@@ -28,21 +28,19 @@ passport.use(new FlickrStrategy({
  }
 ));
 
-function getBuddyIcon(newUser, profile){
+function getBuddyIcon(newUser, profile) {
   return new Promise(function(resolve, reject) {
 
-console.log(profile)
-    var url = `https://api.flickr.com/services/rest/?method=flickr.people.getInfo&api_key=${process.env.FLICKR_CONSUMER_KEY}&user_id=${profile.id}&format=json`;
-console.log('url', url);
-    request(url, function(err, res, body){
-      var trimmedBody = body.replace('jsonFlickrApi(', '').slice(0, -1);
-      trimmedBody = JSON.parse(trimmedBody).person;
-      var photoUrl = `https://farm${trimmedBody.iconfarm}.staticflickr.com/${trimmedBody.iconserver}/buddyicons/${trimmedBody.nsid}.jpg`;
+    var reqUrl = `https://api.flickr.com/services/rest/?method=flickr.people.getInfo&format=json&nojsoncallback=?&api_key=${process.env.FLICKR_CONSUMER_KEY}&user_id=${profile.id}`;
+
+    request(reqUrl, function(err, res, body){
+      var parsed = JSON.parse(body).person;
+      var photoUrl = `https://farm${parsed.iconfarm}.staticflickr.com/${parsed.iconserver}/buddyicons/${parsed.nsid}.jpg`;
       newUser.flickrPhotoUrl = photoUrl;
       resolve(newUser);
     });
   });
-};
+}
 
 // configure serializeUser
 passport.serializeUser(function(user, done) {
