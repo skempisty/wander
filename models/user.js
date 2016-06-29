@@ -5,7 +5,9 @@ var userSchema = new mongoose.Schema({
   name: String,
   email: String,
   handle: String,
-  providerId: String,
+  flickrId: String,
+  flickrPhotoUrl: String,
+  bio: String,
   created: { type: Date, default: Date.now }
 });
 

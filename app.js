@@ -7,12 +7,30 @@ var debug        = require('debug')('app:http');
 var cookieParser = require('cookie-parser');
 var session      = require('express-session');
 var passport     = require('passport');
-var flickr       = require('flickrapi');
+var User         = require("./models/user");
+var multer       = require('multer');
+var bodyParser   = require('body-parser');
+var upload       = multer({dest: 'public/uploads/' });
+var request = require('request');
+
+var methodOverride = require('method-override');
+
+
+
+require('dotenv').load();
+
+request(`https://api.flickr.com/services/rest/?method=flickr.photosets.getList&api_key=${process.env.FLICKR_CONSUMER_KEY}&user_id=141966203@N07&photoset_id=72157669736042642&photo_id=27882505771&format=json`,
+ function(err, res, body) {
+     console.log(body);
+});
+
+
+//5911dd2be24488cfd9d364cd6413126b
 
 // Load local libraries.
 var env      = require('./config/environment'),
-    mongoose = require('./config/database'),
-    routes   = require('./config/routes');
+   mongoose = require('./config/database'),
+   routes   = require('./config/routes');
 
 // Instantiate a server application.
 var app = express();
@@ -24,10 +42,8 @@ app.set('safe-title', env.SAFE_TITLE);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-require('dotenv').load();
 require('./config/database');
 require('./config/passport');
-require('./config/flickr');
 
 // Create local variables for use thoughout the application.
 app.locals.title = app.get('title');
@@ -35,16 +51,19 @@ app.locals.title = app.get('title');
 // |||||||||||||||||||||||||||||||||||||||||
 
 app.use(session({
-  secret: 'delectico',
-  resave: false,
-  saveUninitialized: true
+ secret: 'delectico',
+ resave: false,
+ saveUninitialized: true
 }));
 
 // Logging layer.
 app.use(logger('dev'));
+app.use(methodOverride('_method'));
+
 
 // Helper layer (parses the requests, and adds further data).
 app.use(bodyParser.json());
+app.use(bodyParser({uploadDir:'/path/to/temporary/directory/to/store/upload/files'}));
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(cookieParser('notsosecretnowareyou'));
@@ -68,27 +87,27 @@ app.use('/', routes);
 
 // Catches all 404 routes.
 app.use(function(req, res, next) {
-  var err = new Error('Not Found');
-  err.status = 404;
-  next(err);
+ var err = new Error('Not Found');
+ err.status = 404;
+ next(err);
 });
 
 // Error-handling layer.
 app.use(function(err, req, res, next) {
-  // In development, the error handler will print stacktrace.
-  err = (app.get('env') === 'development') ? err : {};
-  res.status(err.status || 500);
-  res.render('error', {
-    message: err.message,
-    error: err
-  });
+ // In development, the error handler will print stacktrace.
+ err = (app.get('env') === 'development') ? err : {};
+ res.status(err.status || 500);
+ res.render('error', {
+   message: err.message,
+   error: err
+ });
 });
 
 function debugReq(req, res, next) {
-  debug('params:', req.params);
-  debug('query:',  req.query);
-  debug('body:',   req.body);
-  next();
+ debug('params:', req.params);
+ debug('query:',  req.query);
+ debug('body:',   req.body);
+ next();
 }
 
 module.exports = app;

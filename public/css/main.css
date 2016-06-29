@@ -15,6 +15,12 @@ body {
 a { color: #00B7FF; }
 
 
+img.mug_shot{
+  border-radius: 50%;
+}
+
+
+
 #feature{
   border: groove 2px lightgreen;
   border-radius: 10px;
@@ -34,11 +40,14 @@ a { color: #00B7FF; }
   border-radius: 4px;
 }
 
+#bio{
+  width: 3%;
+}
+
 #skip{
   display: block;
   position: relative;
-  left: 195px;
-  top: -30px;
+  top: 10px;
   color: #24afe5;
   background-color: #624e42;
   border-radius: 4px;
