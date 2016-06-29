@@ -1,6 +1,5 @@
 var Trip = require("../models/trip");
 var request = require('request');
-
 var baseSetUrl = 'https://api.flickr.com/services/rest/?method=flickr';
 
 var albumSelect = function(req, res, next) {
@@ -71,3 +70,4 @@ module.exports = {
   create: create,
   show: show
 };
+
