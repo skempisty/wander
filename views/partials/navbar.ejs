@@ -15,16 +15,17 @@
 
       <ul class="nav navbar-nav navbar-right">
         <% if (user) { %>
+          <img class="mug_shot" src="<%= user.flickrPhotoUrl %>"/>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
               <!-- PROFILE PIC -->
               &nbsp;
-              <%= user.flickrId %>
+              <%= user.handle %>
               <!-- HANDLE INSTEAD OF USERNAME -->
               <span class="caret"></span>
             </a>
             <ul class="dropdown-menu">
-              <li><a href="/users/<%= user._id %>/edit">Edit Profile</a></li>
+              <li><a href="/users/edit">Edit Profile</a></li>
               <li><a href="/trips">My Trips</a></li>
               <li role="separator" class="divider"></li>
               <li><a href="/logout">Log out</a></li>

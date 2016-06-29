@@ -48,14 +48,27 @@ a { color: #00B7FF; }
 
 h3 {
   padding-left: 80px;
-<<<<<<< Updated upstream
-=======
 }
 
 img.mug_shot{
   border-radius: 50%;
 }
 
+img.mug_shot{
+  border-radius: 50%;
+}
+
+#feature{
+  border: groove 2px lightgreen;
+  border-radius: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 500px;
+  height: 400px;
+  margin-top: -150px; /* Half the height */
+  margin-left: -250px; /* Half the width */
+}
 
 #edit_btn{
   margin-top: 30px;
@@ -67,21 +80,22 @@ img.mug_shot{
 #bio{
   width: 3%;
 }
->>>>>>> Stashed changes
 
+#skip{
+  display: block;
+  position: relative;
+  top: 10px;
+  color: #24afe5;
+  background-color: #624e42;
+  border-radius: 4px;
 }
 
-.content{
-  font-size: 20px;
-  text-align: center;
-  color: #624e42;
-  font-family: 'Roboto', sans-serif;
-  padding-left: 30px;
-  padding-right: 30px;
+.input{
+  color: #24afe5;
 }
 
-.feature {
-  padding-left: 200px;
+label{
+  text-decoration: underline;
 }
 
 #about em{

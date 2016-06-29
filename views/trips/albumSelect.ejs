@@ -2,22 +2,22 @@
 <html>
 <head>
 <link href='https://fonts.googleapis.com/css?family=Roboto:900&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="/css/main.css">
  <%- include('../partials/head') %>
 </head>
 <body>
  <%- include('../partials/navbar') %>
- <%- include('../partials/header', {subHeading: 'TRIPS'}) %>
-<<<<<<< HEAD:views/trips/index.ejs
+ <%- include('../partials/header', {subHeading: 'Album Select'}) %>
  <main>
 
-  <img src="../images/wander_welcome.png" class="img-responsive" alt="Image"/>
+<ul>
+  <% albums.forEach(function(album) { %>
+    <li><%= album.title._content %><img src="<%= album.primary_photo_extras.url_s %>"><a href="/trips/new?album_id=<%= album.id %>" >choose</a></%></li>
+  <% }); %>
+</ul>
+
+
 
  </main>
-=======
-
-
->>>>>>> bc3ee683e600efe91fbc1ebd7977a4a8321eca83:views/users/trips.ejs
  <%- include('../partials/footer') %>
  <%- include('../partials/scripts') %>
 </body>
