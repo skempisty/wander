@@ -84,6 +84,7 @@ font-family: 'Roboto', sans-serif;
   padding-left: 30px;
 }
 
+/*this pushes the nav bar down so the logo fits better*/
 .navbar-header{
   padding-bottom: 15px;
 }
@@ -114,10 +115,4 @@ font-family: 'Roboto', sans-serif;
   left: 50%;
 }
 
-#contact_list li{
-  float: left;
-  margin: 20px;
-  color: #24afe5;
-  font-family: 'Roboto', sans-serif;
-}
 
