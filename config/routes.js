@@ -11,7 +11,7 @@ var express = require('express'),
 // Require controllers.
 var pagesController = require('../controllers/pages');
 var usersController = require('../controllers/users');
-// var tripsController = require('../controllers/trips');
+var tripsController = require('../controllers/trips');
 
 
 // root path:
