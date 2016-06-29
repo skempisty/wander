@@ -48,6 +48,26 @@ a { color: #00B7FF; }
 
 h3 {
   padding-left: 80px;
+<<<<<<< Updated upstream
+=======
+}
+
+img.mug_shot{
+  border-radius: 50%;
+}
+
+
+#edit_btn{
+  margin-top: 30px;
+  color: #24afe5;
+  background-color: #624e42;
+  border-radius: 4px;
+}
+
+#bio{
+  width: 3%;
+}
+>>>>>>> Stashed changes
 
 }
 
