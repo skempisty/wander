@@ -48,20 +48,50 @@ a { color: #00B7FF; }
 
 h3 {
   padding-left: 80px;
-
 }
 
-.content{
-  font-size: 20px;
-  text-align: center;
-  color: #624e42;
-  font-family: 'Roboto', sans-serif;
-  padding-left: 30px;
-  padding-right: 30px;
+img.mug_shot{
+  border-radius: 50%;
 }
 
-.feature {
-  padding-left: 200px;
+#feature{
+  border: groove 2px lightgreen;
+  border-radius: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 500px;
+  height: 400px;
+  margin-top: -150px; /* Half the height */
+  margin-left: -250px; /* Half the width */
+}
+
+#edit_btn{
+  margin-top: 30px;
+  color: #24afe5;
+  background-color: #624e42;
+  border-radius: 4px;
+}
+
+#bio{
+  width: 3%;
+}
+
+#skip{
+  display: block;
+  position: relative;
+  top: 10px;
+  color: #24afe5;
+  background-color: #624e42;
+  border-radius: 4px;
+}
+
+.input{
+  color: #24afe5;
+}
+
+label{
+  text-decoration: underline;
 }
 
 #about em{
@@ -84,6 +114,7 @@ font-family: 'Roboto', sans-serif;
   padding-left: 30px;
 }
 
+/*this pushes the nav bar down so the logo fits better*/
 .navbar-header{
   padding-bottom: 15px;
 }
@@ -114,10 +145,4 @@ font-family: 'Roboto', sans-serif;
   left: 50%;
 }
 
-#contact_list li{
-  float: left;
-  margin: 20px;
-  color: #24afe5;
-  font-family: 'Roboto', sans-serif;
-}
 
