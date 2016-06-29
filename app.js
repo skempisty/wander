@@ -8,7 +8,6 @@ var cookieParser = require('cookie-parser');
 var session      = require('express-session');
 var passport     = require('passport');
 var User         = require("./models/user");
-var upload       = multer({dest: 'public/uploads/' });
 var request      = require('request');
 var methodOverride = require('method-override');
 
