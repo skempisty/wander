@@ -24,6 +24,20 @@ a { color: #00B7FF; }
   align-content: center;
 }
 
+.slogan {
+  padding-left: 250px;
+}
+
+.content {
+    font-size: 20px;
+    /*text-align: center;*/
+    color: #624e42;
+    font-family: 'Roboto', sans-serif;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 30px;
+}
+
 .contact_list {
   font-size: 25px;
   text-align: right;
@@ -54,16 +68,8 @@ img.mug_shot{
   border-radius: 50%;
 }
 
-#feature{
-  border: groove 2px lightgreen;
-  border-radius: 10px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 500px;
-  height: 400px;
-  margin-top: -150px; /* Half the height */
-  margin-left: -250px; /* Half the width */
+img.mug_shot{
+  border-radius: 50%;
 }
 
 #edit_btn{
