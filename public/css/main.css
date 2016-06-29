@@ -24,6 +24,10 @@ a { color: #00B7FF; }
   align-content: center;
 }
 
+.content {
+  align-content: center;
+}
+
 .contact_list {
   font-size: 25px;
   text-align: right;
@@ -56,18 +60,6 @@ img.mug_shot{
 
 img.mug_shot{
   border-radius: 50%;
-}
-
-#feature{
-  border: groove 2px lightgreen;
-  border-radius: 10px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 500px;
-  height: 400px;
-  margin-top: -150px; /* Half the height */
-  margin-left: -250px; /* Half the width */
 }
 
 #edit_btn{
