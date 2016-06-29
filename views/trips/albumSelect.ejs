@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href='https://fonts.googleapis.com/css?family=Roboto:900&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+ <%- include('../partials/head') %>
+</head>
+<body>
+ <%- include('../partials/navbar') %>
+ <%- include('../partials/header', {subHeading: 'Album Select'}) %>
+ <main>
+
+<ul>
+  <% albums.forEach(function(album) { %>
+    <li><%= album.title._content %><img src="<%= album.primary_photo_extras.url_s %>"><a href="/trips/new?album_id=<%= album.id %>" >choose</a></%></li>
+  <% }); %>
+</ul>
+
+
+
+ </main>
+ <%- include('../partials/footer') %>
+ <%- include('../partials/scripts') %>
+</body>
+</html>
