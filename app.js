@@ -9,23 +9,11 @@ var session      = require('express-session');
 var passport     = require('passport');
 var User         = require("./models/user");
 var multer       = require('multer');
-var bodyParser   = require('body-parser');
 var upload       = multer({dest: 'public/uploads/' });
-var request = require('request');
-
+var request      = require('request');
 var methodOverride = require('method-override');
 
-
-
 require('dotenv').load();
-
-request(`https://api.flickr.com/services/rest/?method=flickr.photosets.getList&api_key=${process.env.FLICKR_CONSUMER_KEY}&user_id=141966203@N07&photoset_id=72157669736042642&photo_id=27882505771&format=json`,
- function(err, res, body) {
-     console.log(body);
-});
-
-
-//5911dd2be24488cfd9d364cd6413126b
 
 // Load local libraries.
 var env      = require('./config/environment'),
@@ -63,7 +51,6 @@ app.use(methodOverride('_method'));
 
 // Helper layer (parses the requests, and adds further data).
 app.use(bodyParser.json());
-app.use(bodyParser({uploadDir:'/path/to/temporary/directory/to/store/upload/files'}));
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(cookieParser('notsosecretnowareyou'));

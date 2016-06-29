@@ -18,37 +18,23 @@ var tripsController = require('../controllers/trips');
 router.get('/', pagesController.feed);
 
 // users resource paths:
-<<<<<<< HEAD
-router.get('/users/:id/edit', usersController.edit);
+router.put('/users', usersController.update);
+router.get('/users/:id/edit', usersController.bio);
 
 // trips paths
 router.get('/trips/new', tripsController.new);
-=======
-router.get('/users/:id/edit', usersController.bio);
 router.get('/trips', usersController.trips);
-router.put('/users', usersController.update);
-
->>>>>>> bc3ee683e600efe91fbc1ebd7977a4a8321eca83
 
 // Flickr OAuth
 router.get('/auth/flickr',
-  passport.authenticate('flickr'),
-<<<<<<< HEAD
-   function(req, res){
-    // The request will be redirected to Flickr for authentication, so this
-    // function will not be called.
+  passport.authenticate('flickr'), function(req, res) {
 });
-=======
-  function(req, res){
-
-  });
->>>>>>> bc3ee683e600efe91fbc1ebd7977a4a8321eca83
 
 router.get('/auth/callback',
   passport.authenticate('flickr', { failureRedirect: '/login' }),
   function(req, res) {
     res.redirect('/');
-  });
+});
 
 
 // router.get('/logout', logout());
