@@ -2,7 +2,7 @@
 var User = require("../models/user");
 
 var bio = function(req, res, next){
-  res.render('users/bio', {user: req.user});
+  res.render('users/bio', {user: req.user, page: 'bio'});
 };
 
 var trips = function(req, res, next) {

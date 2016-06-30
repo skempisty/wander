@@ -11,6 +11,7 @@ var tripSchema = new mongoose.Schema({
   creator:   {type: mongoose.Schema.Types.ObjectId, ref: 'User'},
   createdOn: Date,
   albumId: String,
+  primaryPhoto: String,
   description: String,
   locData: [locationSchema]
 });
