@@ -1,5 +1,10 @@
+* {
+  font-family: 'Amatic SC', cursive;
+  font-size: 25px;
+}
 body {
   box-sizing: border-box;
+
   font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
@@ -13,6 +18,7 @@ em {
 }
 
 body {
+
   font-size: 20px;
   padding: 50px;
   color: #624e42;
@@ -20,6 +26,9 @@ body {
 
 a { color: #00B7FF; }
 
+.field {
+  margin-bottom: 15px;
+}
 .container {
   align-content: center;
 }
@@ -60,6 +69,11 @@ a { color: #00B7FF; }
     height: 350px;
 }
 
+h2 {
+  font-family:;
+  text-align: center;
+}
+
 h3 {
   padding-left: 80px;
 }
@@ -68,8 +82,8 @@ img.mug_shot{
   border-radius: 50%;
 }
 
-img.mug_shot{
-  border-radius: 50%;
+#textarea{
+  font-size: 15pt;
 }
 
 #edit_btn{
@@ -150,5 +164,6 @@ font-family: 'Roboto', sans-serif;
   position: relative;
   left: 50%;
 }
+
 
 
