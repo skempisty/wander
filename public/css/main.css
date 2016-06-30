@@ -22,13 +22,29 @@ em {
 
 a { color: #00B7FF; }
 
+
 /*This is the trip photo icon and title in the trips index*/
 .container-fluid-trips {
   flex-direction: row;
   box-decoration-break: clone;
   text-align: center;
   padding: 20px;
+}
 
+
+.pics {
+    margin: auto;
+    display:block;
+    width: 200px;
+    height: 299px;
+}
+.carousel {
+  width: 500px;
+  height: 400px;
+}
+.carousel-inner {
+  width: 400px;
+  height: 200px;
 }
 
 .field {
@@ -43,6 +59,14 @@ a { color: #00B7FF; }
 .slogan {
   padding-left: 50px;
 }
+
+
+#subpic {
+  margin: auto;
+  display: block;
+}
+/*This centers the slogan travel capture share*/
+
 
 /*This is for all the written content*/
 .content {
@@ -173,6 +197,4 @@ font-family: 'Roboto', sans-serif;
   position: relative;
   left: 50%;
 }
-
-
 

@@ -6,13 +6,12 @@ var express = require('express'),
     connect = require('connect');
     methodOverride = require('method-override');
 
-
-
 // Require controllers.
-var pagesController = require('../controllers/pages');
-var usersController = require('../controllers/users');
-var tripsController = require('../controllers/trips');
-
+var pagesController    = require('../controllers/pages');
+var usersController    = require('../controllers/users');
+var tripsController    = require('../controllers/trips');
+var APIUsersController = require('../controllers/api_users');
+var APITripsController = require('../controllers/api_trips');
 
 // root path:
 router.get('/', pagesController.feed);
@@ -27,6 +26,16 @@ router.get('/trips/new', authenticate, tripsController.new);
 router.get('/trips/:id', tripsController.show);
 router.post('/trips', authenticate, tripsController.create);
 router.get('/trips', authenticate, tripsController.index);
+
+//// API PATHS
+// api users paths:
+router.get('/api/users', APIUsersController.index);
+router.get('/api/users/:handle', APIUsersController.show);
+router.delete('/users/:handle', authenticate, APIUsersController.destroy);
+
+// api trips paths:
+router.get('/api/trips', APITripsController.index);
+router.get('/api/trips/:id', APITripsController.show);
 
 // Flickr OAuth
 router.get('/auth/flickr',
@@ -46,7 +55,6 @@ function authenticate(req, res, next) {
     res.redirect('/auth/flickr');
   }
 }
-// router.get('/logout', logout());
 
 router.get('/logout', function(req, res) {
   req.logout();
@@ -58,30 +66,5 @@ router.get('/contact', pagesController.contact);
 
 // about page
 router.get('/about', pagesController.about);
-
-
-
-// upload images
-router.post('/upload', function (req, res) {
-    var tempPath = req.files.file.path,
-        targetPath = path.resolve('./uploads/image.png');
-    if (path.extname(req.files.file.name).toLowerCase() === '.png') {
-        fs.rename(tempPath, targetPath, function(err) {
-            if (err) throw err;
-            console.log("Upload completed!");
-        });
-    } else {
-        fs.unlink(tempPath, function () {
-            if (err) throw err;
-            console.error("Only .png files are allowed!");
-        });
-    }
-    // ...
-});
-
-router.get('/image.png', function (req, res) {
-    res.sendfile(path.resolve('./uploads/image.png'));
-});
-
 
 module.exports = router;
