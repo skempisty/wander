@@ -1,6 +1,10 @@
 body {
   box-sizing: border-box;
   font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  padding: 50px;
+  color: #624e42;
+  background-color: gray;
 }
 
 em {
@@ -12,25 +16,20 @@ em {
   padding-right: 30px;
 }
 
-body {
-  font-size: 20px;
-  padding: 50px;
-  color: #624e42;
-}
-
 a { color: #00B7FF; }
 
 .container {
   align-content: center;
 }
 
+/*This centers the slogan travel capture share*/
 .slogan {
-  padding-left: 250px;
+  padding-left: 275px;
 }
 
+/*This is for all the written content*/
 .content {
     font-size: 20px;
-    /*text-align: center;*/
     color: #624e42;
     font-family: 'Roboto', sans-serif;
     padding-left: 30px;
@@ -55,7 +54,7 @@ a { color: #00B7FF; }
   -o-background-size: 100% 100%;
   background-size: 100% 100%;
 }
-
+/*This is for pushing the jumbotron to a larger size*/
 .push-spaces {
     height: 350px;
 }
@@ -63,16 +62,13 @@ a { color: #00B7FF; }
 h3 {
   padding-left: 80px;
 }
-
+/*This is the profile photo in the nav bar*/
 img.mug_shot{
   border-radius: 50%;
+  padding: 10px;
 }
 
-img.mug_shot{
-  border-radius: 50%;
-}
-
-#edit_btn{
+#submit_btn{
   margin-top: 30px;
   color: #24afe5;
   background-color: #624e42;
@@ -117,7 +113,7 @@ font-family: 'Roboto', sans-serif;
   width: 25%;
   height: 285%;
   top: -10px;
-  padding-left: 30px;
+  padding-left: 35px;
 }
 
 /*this pushes the nav bar down so the logo fits better*/
