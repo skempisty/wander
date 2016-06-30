@@ -26,6 +26,20 @@ body {
 
 a { color: #00B7FF; }
 
+.pics {
+    margin: auto;
+    display:block;
+    width: 200px;
+    height: 299px;
+}
+.carousel {
+  width: 500px;
+  height: 400px;
+}
+.carousel-inner {
+  width: 400px;
+  height: 200px;
+}
 .field {
   margin-bottom: 15px;
 }
@@ -164,6 +178,4 @@ font-family: 'Roboto', sans-serif;
   position: relative;
   left: 50%;
 }
-
-
 
