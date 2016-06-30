@@ -2,6 +2,7 @@
   font-family: 'Amatic SC', cursive;
   font-size: 25px;
 }
+
 body {
   box-sizing: border-box;
   font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -24,6 +25,7 @@ a { color: #00B7FF; }
 .field {
   margin-bottom: 15px;
 }
+
 .container {
   align-content: center;
 }
@@ -50,7 +52,6 @@ a { color: #00B7FF; }
   font-family: 'Roboto', sans-serif;
   padding-left: 30px;
   padding-right: 30px;
-
 }
 
 .jumbotron{
@@ -60,6 +61,7 @@ a { color: #00B7FF; }
   -o-background-size: 100% 100%;
   background-size: 100% 100%;
 }
+
 /*This is for pushing the jumbotron to a larger size*/
 .push-spaces {
     height: 350px;
@@ -116,11 +118,11 @@ label{
   color: #624e42;
   font-family: 'Roboto', sans-serif;
 }
+
 #about p{
 color: #624e42;
 font-family: 'Roboto', sans-serif;
 }
-
 
 /*this is the nav bar logo*/
 #wander_logo{
