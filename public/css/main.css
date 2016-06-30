@@ -22,6 +22,15 @@ em {
 
 a { color: #00B7FF; }
 
+/*This is the trip photo icon and title in the trips index*/
+.container-fluid-trips {
+  flex-direction: row;
+  box-decoration-break: clone;
+  text-align: center;
+  padding: 20px;
+
+}
+
 .field {
   margin-bottom: 15px;
 }
@@ -31,7 +40,9 @@ a { color: #00B7FF; }
 }
 
 /*This centers the slogan travel capture share*/
-
+.slogan {
+  padding-left: 50px;
+}
 
 /*This is for all the written content*/
 .content {
