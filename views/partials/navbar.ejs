@@ -14,7 +14,9 @@
     </div>
 
       <ul class="nav navbar-nav navbar-right">
-        <% if (user) { %>
+        <% if(user) { %>
+          <% var cls = (page === 'new') ? 'active' : ''; %>
+          <li class="<%= cls %>"><a href="/trips/albumselect">+New Trip</a></li>
           <img class="mug_shot" src="<%= user.flickrPhotoUrl %>"/>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">

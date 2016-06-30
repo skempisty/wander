@@ -68,9 +68,9 @@
             <div id="directions_panel" style="margin:20px;background-color:#FFEE77;"></div>
         </div>
 
-  hello world
-
-  <%= tripId %>
+  <% photoUrls.forEach(function(url) { %>
+    <img src="<%= url %>">
+  <% }); %>
 
 
 </main>

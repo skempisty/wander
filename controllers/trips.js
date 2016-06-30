@@ -1,4 +1,5 @@
 var Trip = require("../models/trip");
+var User = require("../models/user");
 var request = require('request');
 var baseSetUrl = 'https://api.flickr.com/services/rest/?method=flickr';
 
@@ -14,14 +15,14 @@ var albumSelect = function(req, res, next) {
     for(var i=0; i < parsed.photosets.photoset.length; i++) {
     albums.push(parsed.photosets.photoset[i]);
     }
-    res.render('trips/albumSelect', {user: req.user, albums: albums});
+    res.render('trips/albumSelect', {user: req.user, albums: albums, page: 'new'});
   });
 };
 
 var newTrip = function(req, res, next) {
   var albumId = req.query.album_id;
   var primaryPhoto = req.query.url;
-  res.render('trips/new', {user: req.user, albumId: albumId, primaryPhoto: primaryPhoto});
+  res.render('trips/new', {user: req.user, albumId: albumId, primaryPhoto: primaryPhoto, page: 'new'});
 };
 
 var create = function(req, res, next) {
@@ -71,44 +72,46 @@ var index = function(req, res, next) {
     trips.forEach(function(trip) {
       tripData.push([trip.title, trip.primaryPhoto, trip.id]);
     });
-    res.render('trips/index', {user: req.user, tripData: tripData});
+    res.render('trips/index', {user: req.user, tripData: tripData, page: 'index'});
   });
 };
 
 
 var show = function(req, res, next) {
-  // var commonArgsUrl = `&format=json&nojsoncallback=?&api_key=${process.env.FLICKR_CONSUMER_KEY}&user_id=${NEED DB HIT FOR FLICKR ID}`;
   var tripId = req.params.id;
-  var tripCreatorHandle;
-  var tripTitle;
-  var tripGeoTags;
-  var tripDescrip;
+  var tripData;
+  var ownerData;
+  var photoUrls = [];
+  var commonArgsUrl;
 
   Trip.findById(tripId, function(err, trip) {
-    tripCreatorHandle = trip.creator.handle;
-    tripTitle = trip.title;
-    tripGeoTags = trip.locData;
-    tripDescrip = trip.description;
+    tripData = {
+      tripId: tripId,
+      tripAlbumId: trip.albumId,
+      tripCreator: trip.creator,
+      tripTitle: trip.title,
+      tripGeoTags: trip.locData,
+      tripDescrip: trip.description
+    };
+    User.findById(tripData.tripCreator, function(err, user) {
+      ownerData = {
+        handle: user.handle,
+        flickrId: user.flickrId
+      };
+      commonArgsUrl = `&format=json&nojsoncallback=?&api_key=${process.env.FLICKR_CONSUMER_KEY}&user_id=${ownerData.flickrId}`;
+
+      request(baseSetUrl + '.photosets.getPhotos' + commonArgsUrl + `&photoset_id=${tripData.tripAlbumId}&extras=url_t`, function(error, response, body) {
+        var parsed = JSON.parse(body);
+        console.log("RETURNED DATA: " + parsed.photoset.photo);
+        var photos = parsed.photoset.photo;
+        photos.forEach(function(photo) {
+          photoUrls.push(photo.url_t);
+        });
+
+        res.render('trips/show', {user: req.user, tripData: tripData, photoUrls: photoUrls, page: 'show'});
+      });
+    });
   });
-
-// --------------------------
-
-  // request(baseSetUrl + '.photosets.getList' + commonArgsUrl + `&primary_photo_extras=url_s`, function(error, response, body) {
-  //   var parsed = JSON.parse(body);
-  //   console.log(parsed.photosets.photoset);
-
-  //   for(var i=0; i < parsed.photosets.photoset.length; i++) {
-  //   albums.push(parsed.photosets.photoset[i]);
-  //   }
-  //   res.render('trips/albumSelect', {user: req.user, albums: albums});
-  // });
-
-
-
-
-//------------------------------
-
-  res.render('trips/show', {user: req.user, tripId: tripId});
 };
 
 module.exports = {
