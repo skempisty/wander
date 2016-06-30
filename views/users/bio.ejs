@@ -6,20 +6,26 @@
 </head>
 <body>
  <%- include('../partials/navbar') %>
+ <%- include('../partials/header', {subHeading: 'ADD BIO'}) %>
 
  <% if(user) { %>
-  <%- include('../partials/header', {subHeading: 'ADD BIO'}) %>
-  <form id="bio" method="POST" action="/users?_method=PUT">
-    <label>Bio:</label>
-    <input class="input" type="textarea" name="bio" placeholder="Tell us about yourself" required />
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
 
-    <br />
-    <br />
-    <input id="submit_btn" type="submit" value="submit" />
-  </form>
-  <a href="/"><button id="skip">Skip</button></a>
-  <% } %>
+      <form method="POST" action="/users?_method=PUT">
+        <textarea class="form-control field" id="textarea" rows=10 name="bio" placeholder="Tell us about yourself" required ></textarea>
+
+        <input class ="form-control btn-success field " type="submit" value="submit" />
+      </form>
+      <a href="/"><button class="form-control btn-info field ">Skip</button></a>
+
+    </div>
+  </div>
+ <% } %>
+
  <%- include('../partials/footer') %>
  <%- include('../partials/scripts') %>
+
+
 </body>
 </html>
