@@ -16,7 +16,17 @@ function show(req, res, next) {
   });
 }
 
+function destroy(req, res, next) {
+  var handle = req.params.handle;
+  User.remove({ handle: handle }, function(err, user) {
+    if(err) res.json({message: 'Error: ' + err });
+    res.json({message: 'Forget that user'});
+
+  });
+}
+
 module.exports = {
   index: index,
-  show: show
+  show: show,
+  destroy: destroy
 };

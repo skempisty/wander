@@ -31,6 +31,7 @@ router.get('/trips', authenticate, tripsController.index);
 // api users paths:
 router.get('/api/users', APIUsersController.index);
 router.get('/api/users/:handle', APIUsersController.show);
+router.delete('/users/:handle', authenticate, APIUsersController.destroy);
 
 // api trips paths:
 router.get('/api/trips', APITripsController.index);
@@ -54,7 +55,6 @@ function authenticate(req, res, next) {
     res.redirect('/auth/flickr');
   }
 }
-// router.get('/logout', logout());
 
 router.get('/logout', function(req, res) {
   req.logout();
