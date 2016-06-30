@@ -7,19 +7,12 @@
 </head>
 <body>
  <%- include('../partials/navbar') %>
- <%- include('../partials/header', {subHeading: 'TRIPS'}) %>
+ <%- include('../partials/header', {subHeading: 'TRIP show'}) %>
 <main>
 
-  <% tripData.forEach(function(trip) { %>
-    <div class='trip'>
-      <a href="/trips/<%= trip[2] %>">
-        <img src="<%= trip[1] %>" alt="">
-      </a>
-      <div class='title'>
-        <%= trip[0] %>
-      </div>
-    </div>
-  <% }); %>
+  hello world
+
+  <%= tripId %>
 
 
 </main>
