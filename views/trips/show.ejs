@@ -4,6 +4,8 @@
 <link href='https://fonts.googleapis.com/css?family=Roboto:900&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="/css/main.css">
  <%- include('../partials/head') %>
+ <%- include('../partials/scripts') %>
+
 </head>
 <body>
  <%- include('../partials/navbar') %>
@@ -13,10 +15,11 @@
   <% photoUrls.forEach(function(url) { %>
     <img src="<%= url %>">
   <% }); %>
-
+    <div>
+      <div id="googleMap" style="width:500px;height:500px;"></div>
+    </div>
 
 </main>
  <%- include('../partials/footer') %>
- <%- include('../partials/scripts') %>
 </body>
 </html>

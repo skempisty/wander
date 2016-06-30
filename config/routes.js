@@ -25,6 +25,8 @@ router.get('/users/edit', authenticate, usersController.bio);
 router.get('/trips/albumselect', authenticate, tripsController.albumSelect);
 router.get('/trips/new', authenticate, tripsController.new);
 router.get('/trips/:id', tripsController.show);
+
+
 router.post('/trips', authenticate, tripsController.create);
 router.get('/trips', authenticate, tripsController.index);
 

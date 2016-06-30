@@ -15,14 +15,14 @@ var albumSelect = function(req, res, next) {
     for(var i=0; i < parsed.photosets.photoset.length; i++) {
     albums.push(parsed.photosets.photoset[i]);
     }
-    res.render('trips/albumSelect', {user: req.user, albums: albums, page: 'new'});
+    res.render('trips/albumSelect', {user: req.user, albums: albums, page: 'new', apikey: process.env.GOOGLE_KEY});
   });
 };
 
 var newTrip = function(req, res, next) {
   var albumId = req.query.album_id;
   var primaryPhoto = req.query.url;
-  res.render('trips/new', {user: req.user, albumId: albumId, primaryPhoto: primaryPhoto, page: 'new'});
+  res.render('trips/new', {user: req.user, albumId: albumId, primaryPhoto: primaryPhoto, page: 'new', apikey: process.env.GOOGLE_KEY});
 };
 
 var create = function(req, res, next) {
@@ -72,7 +72,7 @@ var index = function(req, res, next) {
     trips.forEach(function(trip) {
       tripData.push([trip.title, trip.primaryPhoto, trip.id]);
     });
-    res.render('trips/index', {user: req.user, tripData: tripData, page: 'index'});
+    res.render('trips/index', {user: req.user, tripData: tripData, page: 'index', apikey: process.env.GOOGLE_KEY});
   });
 };
 
@@ -108,7 +108,7 @@ var show = function(req, res, next) {
           photoUrls.push(photo.url_t);
         });
 
-        res.render('trips/show', {user: req.user, tripData: tripData, photoUrls: photoUrls, page: 'show'});
+        res.render('trips/show', {user: req.user, tripData: tripData, photoUrls: photoUrls, page: 'show', apikey: process.env.GOOGLE_KEY});
       });
     });
   });
