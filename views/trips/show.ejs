@@ -10,9 +10,9 @@
  <%- include('../partials/header', {subHeading: 'TRIP show'}) %>
 <main>
 
-  hello world
-
-  <%= tripId %>
+  <% photoUrls.forEach(function(url) { %>
+    <img src="<%= url %>">
+  <% }); %>
 
 
 </main>
