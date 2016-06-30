@@ -47,8 +47,13 @@ a { color: #00B7FF; }
   align-content: center;
 }
 
-.slogan {
+/*.slogan {
   padding-left: 250px;
+}*/
+
+#subpic {
+  margin: auto;
+  display: block;
 }
 
 .content {
