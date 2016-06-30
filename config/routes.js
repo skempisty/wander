@@ -22,10 +22,11 @@ router.put('/users', authenticate, usersController.update);
 router.get('/users/edit', authenticate, usersController.bio);
 
 // trips paths
-router.get('/trips/albumSelect', tripsController.albumSelect);
-router.get('/trips/new', tripsController.new);
+router.get('/trips/albumSelect', authenticate, tripsController.albumSelect);
+router.get('/trips/new', authenticate, tripsController.new);
 router.get('/trips/:id', tripsController.show);
-router.post('/trips', tripsController.create);
+router.post('/trips', authenticate, tripsController.create);
+router.get('/trips', authenticate, tripsController.index);
 
 // Flickr OAuth
 router.get('/auth/flickr',

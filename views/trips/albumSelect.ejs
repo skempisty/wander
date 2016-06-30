@@ -11,7 +11,7 @@
 
 <ul>
   <% albums.forEach(function(album) { %>
-    <li><%= album.title._content %><img src="<%= album.primary_photo_extras.url_s %>"><a href="/trips/new?album_id=<%= album.id %>" >choose</a></%></li>
+    <li><%= album.title._content %><img src="<%= album.primary_photo_extras.url_s %>"><a href="/trips/new?album_id=<%= album.id %>&url=<%= album.primary_photo_extras.url_s %>" >choose</a></%></li>
   <% }); %>
 </ul>
 
