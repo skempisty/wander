@@ -22,6 +22,20 @@ em {
 
 a { color: #00B7FF; }
 
+.pics {
+    margin: auto;
+    display:block;
+    width: 200px;
+    height: 299px;
+}
+.carousel {
+  width: 500px;
+  height: 400px;
+}
+.carousel-inner {
+  width: 400px;
+  height: 200px;
+}
 .field {
   margin-bottom: 15px;
 }
@@ -30,6 +44,14 @@ a { color: #00B7FF; }
   align-content: center;
 }
 
+/*This centers the slogan travel capture share*/
+
+
+
+#subpic {
+  margin: auto;
+  display: block;
+}
 /*This centers the slogan travel capture share*/
 
 
@@ -162,6 +184,4 @@ font-family: 'Roboto', sans-serif;
   position: relative;
   left: 50%;
 }
-
-
 
