@@ -2,12 +2,6 @@
 ![screenshot](public/images/wander_logo.png)
 
 
-# DEVELOPMENT NOTES
-
-### link to go recreate logo from base
-- http://www.designmantic.com/logo-design/create?design=1603
-
-
 # Technologies Used
 - Node.JS
 - jQuery
