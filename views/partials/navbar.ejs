@@ -2,27 +2,17 @@
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-
-      <a class="navbar-brand" href="/"><img id="wander_logo" src = "../images/wander_logo2.png"></a>
-
+      <a class="navbar-brand" href="/"><img id="wander-logo" src="../images/wander_logo2.png"></a>
     </div>
       <ul class="nav navbar-nav navbar-right">
         <% if(user) { %>
-          <% var cls = (page === 'new') ? 'active' : ''; %>
-          <li class="<%= cls %>"><a href="/trips/albumselect">+New Trip</a></li>
-          <img class="mug_shot" src="<%= user.flickrPhotoUrl %>"/>
+          <% var cls = (page === 'new') ? "active" : ''; %>
+          <li class="<%= cls %> new-trip-adjust"><a class="padding-remove" href="/trips/albumselect">+New Trip</a></li>
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+            <a href="#" class="dropdown-toggle padding-remove" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
               <!-- PROFILE PIC -->
-              &nbsp;
               <%= user.handle %>
-              <!-- HANDLE INSTEAD OF USERNAME -->
+              <img class="mug-shot" src="<%= user.flickrPhotoUrl %>"/>
               <span class="caret"></span>
             </a>
             <ul class="dropdown-menu">
@@ -34,9 +24,7 @@
               <li><a class='delete-button' id="<%= user.handle %>">Delete User</a></li>
             </ul>
           </li>
-        <% } %>
-
-        <% if (!user) { %>
+        <% } else { %>
           <li><a href="/auth/flickr">Login</a></li>
         <% } %>
 

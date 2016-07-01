@@ -107,16 +107,12 @@ h3 {
   padding-left: 80px;
 }
 
+
 #title-words {
   margin-bottom: 15px;
   font-size: 20px;
 }
 
-/*This is the profile photo in the nav bar*/
-img.mug_shot{
-  border-radius: 50%;
-  padding: 10px;
-}
 
 #textarea{
   font-size: 15pt;
@@ -160,20 +156,30 @@ color: #624e42;
 font-family: 'Roboto', sans-serif;
 }
 
-/*this is the nav bar logo*/
-#wander_logo{
-  display: inline-block;
+/* NAV BAR CSS */
+
+#wander-logo{
+  width: 10%;
   position: relative;
-  width: 25%;
-  height: 285%;
-  top: -10px;
-  padding-left: 35px;
+  top: -5px;
 }
 
-/*this pushes the nav bar down so the logo fits better*/
-.navbar-header{
-  padding-bottom: 15px;
+.new-trip-adjust {
+  padding-top: 14px;
 }
+/*This is the profile photo in the nav bar*/
+img.mug-shot{
+  border-radius: 30%;
+  padding: 10px;
+  height: 50px;
+}
+
+.navbar-nav>li>.padding-remove {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+/*|||||||||||||||||||||||*/
 
 #contact_list{
   float: right;
@@ -205,7 +211,7 @@ font-family: 'Roboto', sans-serif;
   height: 500px;
   width: 100%;
 }
-// albums index page
+
 
 .profile-name {
 border-bottom: 1px solid red;
