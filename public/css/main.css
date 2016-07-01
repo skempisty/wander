@@ -44,12 +44,16 @@ a { color: #00B7FF; }
   align-content: center;
 }
 
+/*This centers the slogan travel capture share*/
+
+
 
 #subpic {
   margin: auto;
   display: block;
 }
 /*This centers the slogan travel capture share*/
+
 
 /*This is for all the written content*/
 .content {
