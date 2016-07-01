@@ -17,12 +17,12 @@
 
 # Project Developers Github Usernames
 - skempisty
-![screenshot](public/images/stephen.png)
+![](public/images/stephen.png =100x20)
 - kylefberg
-![screenshot](public/images/kyle.png)
+![](public/images/kyle.png =100x20)
 - wjen
-![screenshot](public/images/wen.png)
+![](public/images/wen.png =100x20)
 - Alex1100
-![screenshot](public/images/alex.png)
+![](public/images/alex.png =100x20)
 
 # Design
