@@ -10,7 +10,7 @@ var albumSelect = function(req, res, next) {
 
   request(baseSetUrl + '.photosets.getList' + commonArgsUrl + `&primary_photo_extras=url_s`, function(error, response, body) {
     var parsed = JSON.parse(body);
-    console.log(parsed.photosets.photoset);
+    // console.log(parsed.photosets.photoset);
 
     for(var i=0; i < parsed.photosets.photoset.length; i++) {
     albums.push(parsed.photosets.photoset[i]);
@@ -35,7 +35,7 @@ var create = function(req, res, next) {
   var geoTags = [];
 
   // REQUEST to get photo Ids and GEOTAGS from selected album
-  request(baseSetUrl + '.photosets.getPhotos' + commonArgsUrl + `&photoset_id=${albumId}&extras=geo`, function(error, response, body) {
+  request(baseSetUrl + '.photosets.getPhotos' + commonArgsUrl + `&photoset_id=${albumId}&extras=geo,date_taken`, function(error, response, body) {
     var newTrip = new Trip({
       title: title,
       description: descrip,
@@ -52,13 +52,22 @@ var create = function(req, res, next) {
         photoIds.push(photo.id);
         newTrip.locData.push({
           latitude: parseFloat(photo.latitude),
-          longitude: parseFloat(photo.longitude)
+          longitude: parseFloat(photo.longitude),
+          dateTaken: photo.datetaken
         });
       });
+
+      // SORTS PHOTODATA BY DATE TAKEN
+      newTrip.locData.sort(function(a,b) {
+        var dateA= a.dateTaken, dateB= b.dateTaken;
+        return dateA-dateB //sort by date. starting with first taken
+      });
+
     newTrip.save(function(err, trip) {
       if(err) {
         console.log(err);
       }
+      // console.log(newTrip.locData);
       res.redirect('/');
     });
   });
@@ -85,21 +94,21 @@ var show = function(req, res, next) {
 
   Trip.findById(tripId, function(err, trip) {
     tripData = {
-      tripId: tripId,
-      tripAlbumId: trip.albumId,
-      tripCreator: trip.creator,
-      tripTitle: trip.title,
-      tripGeoTags: trip.locData,
-      tripDescrip: trip.description
+      id: tripId,
+      albumId: trip.albumId,
+      creator: trip.creator,
+      title: trip.title,
+      geoTags: trip.locData,
+      descrip: trip.description
     };
-    User.findById(tripData.tripCreator, function(err, user) {
+    User.findById(tripData.creator, function(err, user) {
       ownerData = {
         handle: user.handle,
         flickrId: user.flickrId
       };
       commonArgsUrl = `&format=json&nojsoncallback=?&api_key=${process.env.FLICKR_CONSUMER_KEY}&user_id=${ownerData.flickrId}`;
 
-      request(baseSetUrl + '.photosets.getPhotos' + commonArgsUrl + `&photoset_id=${tripData.tripAlbumId}&extras=url_t`, function(error, response, body) {
+      request(baseSetUrl + '.photosets.getPhotos' + commonArgsUrl + `&photoset_id=${tripData.albumId}&extras=url_t`, function(error, response, body) {
         var parsed = JSON.parse(body);
         console.log("RETURNED DATA: " + parsed.photoset.photo);
         var photos = parsed.photoset.photo;

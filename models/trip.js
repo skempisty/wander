@@ -3,7 +3,8 @@ var mongoose = require('mongoose'),
 
 var locationSchema = new mongoose.Schema({
   latitude: Number,
-  longitude: Number
+  longitude: Number,
+  dateTaken: Date
 });
 
 var tripSchema = new mongoose.Schema({
