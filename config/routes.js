@@ -18,7 +18,7 @@ router.get('/', pagesController.feed);
 
 // users resource paths:
 router.put('/users', authenticate, usersController.update);
-router.get('/users/edit', authenticate, usersController.bio);
+router.get('/users/edit', authenticate, usersController.edit);
 
 // trips paths
 router.get('/trips/albumselect', authenticate, tripsController.albumSelect);

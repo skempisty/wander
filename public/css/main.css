@@ -25,19 +25,18 @@ a { color: #00B7FF; }
 .pics {
     margin: auto;
     display:block;
-    width: 200px;
-    height: 299px;
+    width: 250px;
+    height: 250px;
 }
-.carousel {
-  width: 500px;
-  height: 400px;
-}
-.carousel-inner {
-  width: 400px;
-  height: 200px;
-}
+
 .field {
   margin-bottom: 15px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.field-btn {
+  margin-bottom: 15px;
+  font-size: 50px;
 }
 
 .container {
@@ -88,12 +87,16 @@ a { color: #00B7FF; }
 }
 
 h2 {
-  font-family:;
   text-align: center;
 }
 
 h3 {
   padding-left: 80px;
+}
+
+#title-words {
+  margin-bottom: 15px;
+  font-size: 20px;
 }
 
 /*This is the profile photo in the nav bar*/
