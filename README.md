@@ -33,7 +33,7 @@ where they were taken. Wander will then place them by location over a google
 maps image and create a route based on your photos, so you'll know exactly
 where the photos were taken and the route you took.</p>
 
-![screenshot](public/images/)
+![screenshot](public/images/feed_page.png)
 
 <p>Wander, A new way of capturing your memories and sharing them with the world.</p>
 <a href="">Click here to visit the site</a>
