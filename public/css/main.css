@@ -32,23 +32,22 @@ a { color: #00B7FF; }
 }
 
 
+
 .pics {
     margin: auto;
     display:block;
-    width: 200px;
-    height: 299px;
-}
-.carousel {
-  width: 500px;
-  height: 400px;
-}
-.carousel-inner {
-  width: 400px;
-  height: 200px;
+    width: 250px;
+    height: 250px;
 }
 
 .field {
   margin-bottom: 15px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.field-btn {
+  margin-bottom: 15px;
+  font-size: 50px;
 }
 
 .container {
@@ -101,7 +100,6 @@ a { color: #00B7FF; }
 }
 
 h2 {
-  font-family:;
   text-align: center;
 }
 
@@ -109,6 +107,10 @@ h3 {
   padding-left: 80px;
 }
 
+#title-words {
+  margin-bottom: 15px;
+  font-size: 20px;
+}
 
 #textarea{
   font-size: 15pt;
@@ -208,3 +210,32 @@ img.mug-shot{
   width: 100%;
 }
 
+.profile-name {
+border-bottom: 1px solid red;
+margin-bottom: 10px;
+}
+
+.profile-pic {
+  height: 100px;
+  width: 100px;
+  border-radius: 10px;
+}
+
+.profile-text {
+  margin-top: 10px;
+}
+#album-titles {
+margin: 10px;
+border-bottom: 1px solid gray;
+}
+
+.album-pics {
+  border: 10px solid gray;
+  border-radius: 10px;
+  width: 300px;
+  height: 200px;
+}
+
+#albums-picture-list {
+  list-style-type: none;
+}
