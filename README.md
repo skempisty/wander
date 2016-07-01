@@ -11,8 +11,11 @@
 # Project Developers
 
 <a href="https://github.com/kylefberg">Kyle Firstenberg</a>
+<br>
 <a href="https://github.com/skempisty">Stephen Kempisty</a>
+<br>
 <a href="https://github.com/wjen">Wen Jen</a>
+<br>
 <a href="https://github.com/Alex1100">Alex Aleksanyan</a>
 
 <p>Wax on, right hand. Wax off, left hand. Wax on, wax off. Breathe in through nose, out the mouth.Wax on, wax off. Don't forget to breathe, very important.</p>
