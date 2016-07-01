@@ -32,6 +32,7 @@ a { color: #00B7FF; }
 }
 
 
+
 .pics {
     margin: auto;
     display:block;
@@ -204,4 +205,34 @@ font-family: 'Roboto', sans-serif;
   height: 500px;
   width: 100%;
 }
+// albums index page
 
+.profile-name {
+border-bottom: 1px solid red;
+margin-bottom: 10px;
+}
+
+.profile-pic {
+  height: 100px;
+  width: 100px;
+  border-radius: 10px;
+}
+
+.profile-text {
+  margin-top: 10px;
+}
+#album-titles {
+margin: 10px;
+border-bottom: 1px solid gray;
+}
+
+.album-pics {
+  border: 10px solid gray;
+  border-radius: 10px;
+  width: 300px;
+  height: 200px;
+}
+
+#albums-picture-list {
+  list-style-type: none;
+}

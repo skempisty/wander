@@ -12,7 +12,7 @@ var trips = function(req, res, next) {
 function update(req, res, next) {
   req.user.bio = req.body.bio;
   req.user.save(function(err, user){
-    res.redirect('/trips');
+    res.redirect('/trips/albumSelect');
   });
 };
 
