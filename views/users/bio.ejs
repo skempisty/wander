@@ -8,7 +8,7 @@
  <%- include('../partials/navbar') %>
  <%- include('../partials/header', {subHeading: 'ADD BIO'}) %>
 
- <% if(user) { %>
+ <% if(user && !user.bio) { %>
   <div class="row">
     <div class="col-md-8 col-md-offset-2">
 
@@ -21,7 +21,21 @@
 
     </div>
   </div>
- <% } %>
+ <% } else { %>
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+
+      <form method="POST" action="/users?_method=PUT">
+        <textarea class="form-control field" id="textarea" rows=10 name="bio" required ><%= user.bio %></textarea>
+
+        <input class ="form-control btn-success field " type="submit" value="submit" />
+      </form>
+      <a href="/trips"><button class="form-control btn-info field ">Skip</button></a>
+
+    </div>
+  </div>
+  <% } %>
+
 
  <%- include('../partials/footer') %>
  <%- include('../partials/scripts') %>
