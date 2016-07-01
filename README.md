@@ -10,13 +10,13 @@
 - Bootstrap
 
 # Project Developers Github Usernames
-- skempisty
-![](public/images/stephen.png =100x20)
+<p>skempisty</p>
+<img style="float: left" src="public/images/stephen.png">
 - kylefberg
-![](public/images/kyle.png =100x20)
+<img style="float: right" src="public/images/kyle.png">
 - wjen
-![](public/images/wen.png =100x20)
+<img style="float: left" src="public/images/wen.png">
 - Alex1100
-![](public/images/alex.png =100x20)
+<img style="float: right" src="public/images/alex.png">
 
 # Design
