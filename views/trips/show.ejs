@@ -7,7 +7,6 @@
   <link rel="stylesheet" href="/css/main.css">
   <%- include('../partials/head') %>
   <%- include('../partials/scripts') %>
-  <%- include('../partials/googleMapScript') %>
 </head>
 <body>
   <%- include('../partials/navbar') %>
@@ -15,16 +14,21 @@
 <main>
 
   <div class="grab-loc" title="<%= tripData.tripId %>">
-    <div id="googleMap" style="width:500px;height:500px;"></div>
+    <div id="map"></div>
   </div>
+
+    <!-- <div id="googleMap" style="width:500px;height:500px;"></div> -->
+
 
   <% photoUrls.forEach(function(url) { %>
     <img src="<%= url %>">
   <% }); %>
 
 </main>
-<script src="http://www.google-analytics.com/urchin.js" type="text/javascript"></script>
-<script type="text/javascript"></script>
+  <%- include('../partials/googleMapScript') %>
  <%- include('../partials/footer') %>
+ <script async defer src='https://maps.googleapis.com/maps/api/js?key=AIzaSyAuzWaGotlzc4RiAQlwcud4Amu-0i_FIgw&callback=initMap'></script>
+
 </body>
+
 </html>
