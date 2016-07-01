@@ -18,10 +18,12 @@
  </div>
 
  <div class='col-md-7'>
-  <h2 id="albumlisttitle"><strong>My Albums</strong></h2>
+  <div id="albumlisttitles">
+    <h2><strong>My Albums</strong></h2>
+  </div>
   <ul id='albums-picture-list'>
     <% albums.forEach(function(album) { %>
-      <li class="album-titles"><%= album.title._content %></li>
+      <li class="album-titles"><%= album.title._content %></li><hr>
       <li><img class="album-pics" src="<%= album.primary_photo_extras.url_s%>">
           <span class ="select-btn">
           <a href="/trips/new?album_id=<%= album.id %>&url=<%= album.primary_photo_extras.url_s %>" class= "btn btn-success btn-lg">
