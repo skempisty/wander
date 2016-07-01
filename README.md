@@ -44,7 +44,7 @@ where the photos were taken and the route you took.</p>
 
 # NEXT STEPS
 
-- In our icebox we have several ideas to improve the existing app. Those ideas include:
+ In our icebox we have several ideas to improve the existing app. Those ideas include:
 
 - 1) Sorting users trips by location
 
