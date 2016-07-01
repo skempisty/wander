@@ -1,23 +1,6 @@
 
-<script async defer>
+<script>
 var myCenter;
-
-var map;
-console.log(map)
-function initMap() {
-  var tripId = $('.grab-loc').attr('title');
-
-  $.get(`/api/locations/${tripId}`)
-    .then(function(data) {
-      myCenter = new google.maps.LatLng(data[0].latitude, data[0].longitude);
-      google.maps.event.addDomListener(window, 'load', function() {
-        initialize(data);
-      });
-
-    }, function(err) {
-      console.log(err);
-    });
-}
 
 function initialize(data) {
   //creates the map with initial properties
@@ -29,7 +12,6 @@ function initialize(data) {
   };
   var map =new google.maps.Map(document.getElementById("map"), mapProp);
 
-  console.log(data);
   var marker = [];
 
   data.forEach(function(location) {
@@ -38,79 +20,20 @@ function initialize(data) {
       map: map
     });
   });
-
-
-
-  // marker.setMap(map);
+  marker.setMap(map);
 };
 
-// function initialize() {
-//   var directionsService = new google.maps.DirectionsService;
-//   var directionsDisplay = new google.maps.DirectionsRenderer;
-//   var map = new google.maps.Map(document.getElementById('map'), {
-//     zoom: 6,
-//     center: {lat: 41.85, lng: -87.65}
-//   });
-//   directionsDisplay.setMap(map);
+$(function() {
+  var tripId = $('.grab-loc').attr('title');
 
-//   document.getElementById('submit').addEventListener('click', function() {
-//     calculateAndDisplayRoute(directionsService, directionsDisplay);
-//   });
-//   }
+  $.get(`/api/locations/${tripId}`)
+    .then(function(data) {
+      myCenter = new google.maps.LatLng(data[0].latitude, data[0].longitude);
+      initialize(data);
+    }, function(err) {
+      console.log(err);
+    });
+});
 
-//   function calculateAndDisplayRoute(directionsService, directionsDisplay) {
-//   var waypts = [];
-//   var checkboxArray = document.getElementById('waypoints');
-//   for (var i = 0; i < checkboxArray.length; i++) {
-//     if (checkboxArray.options[i].selected) {
-//       waypts.push({
-//         location: checkboxArray[i].value,
-//         stopover: true
-//       });
-//     }
-//   }
-
-//   directionsService.route({
-//     origin: document.getElementById('start').value,
-//     destination: document.getElementById('end').value,
-//     waypoints: waypts,
-//     optimizeWaypoints: true,
-//     travelMode: google.maps.TravelMode.DRIVING
-//   }, function(response, status) {
-//     if (status === google.maps.DirectionsStatus.OK) {
-//       directionsDisplay.setDirections(response);
-//       var route = response.routes[0];
-//       var summaryPanel = document.getElementById('directions-panel');
-//       summaryPanel.innerHTML = '';
-//       // For each route, display summary information.
-//       for (var i = 0; i < route.legs.length; i++) {
-//         var routeSegment = i + 1;
-//         summaryPanel.innerHTML += '<b>Route Segment: ' + routeSegment +
-//             '</b><br>';
-//         summaryPanel.innerHTML += route.legs[i].start_address + ' to ';
-//         summaryPanel.innerHTML += route.legs[i].end_address + '<br>';
-//         summaryPanel.innerHTML += route.legs[i].distance.text + '<br><br>';
-//       }
-//     } else {
-//       window.alert('Directions request failed due to ' + status);
-//     }
-//   });
-// }
-
-
-// $(function() {
-//   var tripId = $('.grab-loc').attr('title');
-
-//   $.get(`/api/locations/${tripId}`)
-//     .then(function(data) {
-//       myCenter = new google.maps.LatLng(data[0].latitude, data[0].longitude);
-//       google.maps.event.addDomListener(window, 'load', function() {
-//         initialize(data);
-//       });
-
-//     }, function(err) {
-//       console.log(err);
-//     });
-// });
 </script>
 
