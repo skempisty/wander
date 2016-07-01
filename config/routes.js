@@ -12,6 +12,8 @@ var usersController    = require('../controllers/users');
 var tripsController    = require('../controllers/trips');
 var APIUsersController = require('../controllers/api_users');
 var APITripsController = require('../controllers/api_trips');
+var APILocationsController = require('../controllers/api_locations');
+
 
 // root path:
 router.get('/', pagesController.feed);
@@ -38,6 +40,9 @@ router.delete('/users/:handle', authenticate, APIUsersController.destroy);
 // api trips paths:
 router.get('/api/trips', APITripsController.index);
 router.get('/api/trips/:id', APITripsController.show);
+
+// api locations path:
+router.get('/api/locations/:id', APILocationsController.index);
 
 // Flickr OAuth
 router.get('/auth/flickr',

@@ -76,7 +76,6 @@ var index = function(req, res, next) {
   });
 };
 
-
 var show = function(req, res, next) {
   var tripId = req.params.id;
   var tripData;
@@ -112,6 +111,10 @@ var show = function(req, res, next) {
       });
     });
   });
+};
+
+var destroy = function() {
+
 };
 
 module.exports = {
