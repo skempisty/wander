@@ -178,6 +178,11 @@ img.mug-shot{
     padding-bottom: 0px;
 }
 
+.footer{
+    border-top: 1px solid gray;
+    clear: both;
+}
+
 /*|||||||||||||||||||||||*/
 
 #contact_list{
