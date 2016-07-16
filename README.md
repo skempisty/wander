@@ -36,7 +36,7 @@ where the photos were taken and the route you took.</p>
 ![screenshot](public/images/feed_view.png)
 
 <p>Wander, A new way of capturing your memories and sharing them with the world.</p>
-<a href="">Click here to visit the site</a>
+<a href="http://frozen-meadow-17947.herokuapp.com/">Click here to visit the site</a>
 
 # Trello Board
 <a href="https://trello.com/b/DqlzFuSI/wander">Trello board</a>
