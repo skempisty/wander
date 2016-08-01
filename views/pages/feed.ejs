@@ -3,45 +3,57 @@
 <head>
   <link href='https://fonts.googleapis.com/css?family=Roboto:900&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
   <%- include('../partials/head') %>
+  <link rel="stylesheet" href="/css/feed.css">
+  <%- include('../partials/scripts') %>
+  <script src="/js/carousel.js"></script>
 </head>
-<main>
-  <body>
+<body>
+  <header>
     <%- include('../partials/navbar') %>
-    <%- include('../partials/header', {subHeading: ''}) %>
-    <div class="jumbotron">
-      <div class="container push-spaces">
+  </header>
+  <main>
+    <%- include('../partials/carousel') %>
+    <div class="features">
+      <div>
+        <h4>Travel</h4>
+        <p>
+          Embark on your adventure! Wander will remind you where you've
+          been.
+        </p>
+        <img src="/images/trip_icon.png" alt="">
+      </div>
+      <div>
+        <h4>Capture</h4>
+        <p>
+          Take pictures just like you always do! No extra work required.
+        </p>
+        <img src="/images/camera_icon.png" alt="">
+      </div>
+      <div>
+        <h4>Share</h4>
+        <p>
+          You went where? Wander helps you visualize your trip.
+        </p>
+        <img src="/images/share_icon.png" alt="">
       </div>
     </div>
-    <!-- This is the text travel capture share -->
-    <div class="slogan">
-      <img src="../images/slogan.png" class="img-responsive" id="subpic" alt="Image">
+    <div class="info">
+
     </div>
-
-    <br>
-
-    <div class= content>
-      <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-
-          <!-- This is our map view of the app -->
-          <img src="../images/wander_welcome.png" class="img-responsive" alt="Image">
-        </div>
-        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-            Wander was designed by people who have a love for culture and travel. <br/>
-            It is an app that will allow you to capture your memories and save them
-            to an album. <br/><br/>
-            This album will show your photos, and the route
-            you took by embedding the images into a google map view.<br/><br/>
-            This will allow you to see the route you took and each place you took a photo.<br/><br/>
-            To start, log in with your flicker account and create your first memory.<br/><br/>
-          <br/><br/><br/><br/><br/>
-        </div>
-      </div>
-
-
-     </div>
-      <%- include('../partials/footer') %>
-      <%- include('../partials/scripts') %>
-
-  </body>
-</main>
+<!--     <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+      <pre>
+      Wander was designed by people who have a love for culture and travel.
+      It is an app that will allow you to capture your memories and save them
+      to an album.
+      This album will show your photos, and the route
+      you took by embedding the images into a google map view.
+      This will allow you to see the route you took and each place you took a photo.
+      To start, log in with your flicker account and create your first memory.
+      </pre>
+    </div> -->
+<!--     <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+      <img src="/images/map_screenshot.png" alt="">
+    </div> -->
+  </main>
+</body>
 </html>
