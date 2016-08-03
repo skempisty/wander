@@ -39,8 +39,12 @@
 
 .devteam div {
   width: 20%;
-  color: white;
   text-align: center;
+}
+
+.devteam a {
+  color: white;
+  text-decoration: none;
 }
 
 .devteam img {
